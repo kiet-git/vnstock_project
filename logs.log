@@ -13,3 +13,13 @@
 2023-12-26 15:26:14,739 - INFO - Capture all daily fund data started.
 2023-12-26 15:26:38,679 - INFO - Capture all daily fund data ended.
 2023-12-26 15:26:38,681 - INFO - Capture all daily data ended.
+2023-12-26 15:35:18,508 - INFO - Capture all daily stock data started.
+2023-12-26 15:35:30,262 - INFO - Capture all daily stock data started.
+2023-12-26 15:36:30,895 - INFO - Capture all daily stock data started.
+2023-12-26 15:36:59,699 - ERROR - Error capturing stock intraday data for symbol A32: "['cp', 'rcp'] not found in axis"
+2023-12-26 15:38:19,651 - INFO - Capture all daily stock data started.
+2023-12-26 15:38:47,530 - ERROR - Error capturing stock intraday data for symbol A32: "['cp', 'rcp'] not found in axis"
+2023-12-26 15:39:53,233 - INFO - Capture all daily stock data ended.
+2023-12-26 15:39:53,235 - INFO - Capture all daily fund data started.
+2023-12-26 15:40:16,041 - INFO - Capture all daily fund data ended.
+2023-12-26 15:40:16,043 - INFO - Capture all daily data ended.

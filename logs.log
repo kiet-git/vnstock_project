@@ -1,13 +1,20 @@
-2023-12-26 15:46:01,154 - INFO - Capture all daily stock data started.
-2023-12-26 15:46:13,563 - INFO - Capture all daily stock data started.
-2023-12-26 15:46:37,932 - ERROR - Error capturing stock intraday data for symbol A32: "['cp', 'rcp'] not found in axis"
-2023-12-26 15:47:41,478 - INFO - Capture all daily stock data ended.
-2023-12-26 15:47:41,480 - INFO - Capture all daily fund data started.
-2023-12-26 15:48:04,379 - INFO - Capture all daily fund data ended.
-2023-12-26 15:48:04,381 - INFO - Capture all daily data ended.
-2023-12-26 16:28:00,258 - INFO - Capture all daily stock data started.
-2023-12-26 16:28:28,878 - ERROR - Error capturing stock intraday data for symbol A32: "['cp', 'rcp'] not found in axis"
-2023-12-26 16:29:57,454 - INFO - Capture all daily stock data ended.
-2023-12-26 16:29:57,455 - INFO - Capture all daily fund data started.
-2023-12-26 16:30:20,217 - INFO - Capture all daily fund data ended.
-2023-12-26 16:30:20,218 - INFO - Capture all daily data ended.
+2023-12-28 13:06:44,992 - INFO - Capture all daily stock data started.
+2023-12-28 13:07:13,219 - ERROR - Error capturing stock intraday data for symbol A32: "['cp', 'rcp'] not found in axis"
+2023-12-28 13:08:14,803 - INFO - Capture all daily stock data ended.
+2023-12-28 13:08:14,803 - INFO - Capture all daily fund data started.
+2023-12-28 13:08:36,018 - INFO - Capture all daily fund data ended.
+2023-12-28 13:08:36,018 - INFO - Capture all daily data ended.
+2023-12-28 13:11:34,163 - INFO - Capture all quarterly data started.
+2023-12-28 13:11:53,923 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2023-12-28 13:11:56,954 - ERROR - Error capturing company subsidiaries listing for symbol ABI: "['no'] not found in axis"
+2023-12-28 13:12:02,151 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2023-12-28 13:12:06,942 - ERROR - Error capturing income statement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:12:09,703 - ERROR - Error capturing income statement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:12:13,725 - ERROR - Error capturing income statement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:12:16,951 - ERROR - Error capturing income statement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:12:19,502 - ERROR - Error capturing income statement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:12:22,775 - ERROR - Error capturing income statement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:12:25,607 - ERROR - Error capturing income statement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:12:28,265 - ERROR - Error capturing income statement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:12:31,605 - ERROR - Error capturing income statement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:12:33,650 - INFO - Capture all quarterly data ended.

@@ -1,0 +1,52 @@
+2023-12-28 13:30:53,216 - INFO - Capture all daily data started.
+2023-12-28 13:30:53,220 - INFO - Capture all daily company data started.
+2023-12-28 13:32:24,274 - INFO - Capture all daily company data ended.
+2023-12-28 13:32:24,275 - INFO - Capture all daily fund data started.
+2023-12-28 13:32:46,180 - INFO - Capture all daily fund data ended.
+2023-12-28 13:32:46,181 - INFO - Capture all daily data ended.
+2023-12-28 13:32:46,183 - INFO - Capture all quarterly data started.
+2023-12-28 13:33:05,352 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2023-12-28 13:33:08,865 - ERROR - Error capturing company subsidiaries listing for symbol ABI: "['no'] not found in axis"
+2023-12-28 13:33:15,707 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2023-12-28 13:33:21,762 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:33:24,525 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:33:27,752 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:33:30,513 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:33:33,376 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:33:36,310 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:33:38,072 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:33:39,614 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:33:44,994 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 13:33:47,431 - INFO - Capture all quarterly data ended.
+2023-12-28 18:11:21,382 - INFO - File path: /Users/TuanKiet/Desktop/DSLearn/vnstock_project
+2023-12-28 20:37:34,369 - INFO - /Users/TuanKiet/Desktop/DSLearn/vnstock_project/
+2023-12-28 20:37:34,370 - INFO - Capture all quarterly data started.
+2023-12-28 20:37:35,774 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2023-12-28 20:37:36,226 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2023-12-28 20:37:39,122 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 20:37:39,526 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 20:37:39,892 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 20:37:40,343 - INFO - Capture all quarterly data ended.
+2023-12-28 14:07:43,312 - INFO - Capture all daily data started.
+2023-12-28 14:07:43,323 - INFO - Capture all daily company data started.
+2023-12-28 14:07:50,503 - ERROR - Error capturing historical data for symbol A32: stock_historical_data() got an unexpected keyword argument 'decor'
+2023-12-28 14:07:50,599 - ERROR - Error capturing stock intraday data for symbol A32: stock_intraday_data() got an unexpected keyword argument 'investor_segment'
+2023-12-28 14:08:05,799 - INFO - Capture all daily company data ended.
+2023-12-28 14:08:05,835 - INFO - Capture all daily fund data started.
+2023-12-28 14:08:05,852 - ERROR - Error capturing fund listing data: name 'funds_listing' is not defined
+2023-12-28 16:01:19,210 - INFO - Capture all daily data started.
+2023-12-28 16:01:19,221 - INFO - Capture all daily company data started.
+2023-12-28 16:01:57,328 - INFO - Capture all daily company data ended.
+2023-12-28 16:01:57,357 - INFO - Capture all daily fund data started.
+2023-12-28 16:01:57,398 - ERROR - Error capturing fund listing data: name 'funds_listing' is not defined
+2023-12-28 16:09:19,118 - INFO - Capture all daily data started.
+2023-12-28 16:09:19,133 - INFO - Capture all daily company data started.
+2023-12-28 16:09:53,307 - INFO - Capture all daily company data ended.
+2023-12-28 16:09:53,316 - INFO - Capture all daily data ended.
+2023-12-28 16:11:13,330 - INFO - Capture all quarterly data started.
+2023-12-28 16:11:17,670 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2023-12-28 16:11:18,756 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2023-12-28 16:11:19,365 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 16:11:19,885 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 16:11:20,699 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2023-12-28 16:11:23,769 - INFO - Capture all quarterly data ended.

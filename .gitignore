@@ -2,6 +2,8 @@
 .ipynb_checkpoints/
 venv/
 .DS_Store
+__pycache__/
+error_ss/
 
 #Airflow
 logs/

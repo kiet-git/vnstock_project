@@ -1,4 +1,5 @@
 #Data Crawling
+
 #Install and import packages
 from vnstock import *
 # from vnstock import (listing_companies, ticker_price_volatility, company_insider_deals, company_events, company_news, stock_historical_data, stock_intraday_data, stock_evaluation, general_rating, biz_model_rating, biz_operation_rating, financial_health_rating, valuation_rating, industry_financial_health, funds_listing, fund_details, company_overview, company_profile, company_large_shareholders, company_fundamental_ratio, company_subsidiaries_listing, company_officers, financial_ratio, financial_report)
@@ -10,6 +11,7 @@ import re
 import logging
 import os
 
+# Set up logger
 logger = logging.getLogger('server_logger')
 logger.setLevel(logging.ERROR)
 logger.setLevel(logging.INFO)
@@ -26,50 +28,51 @@ if not len(logger.handlers) > 0:
     logger.addHandler(file_handler)
 
 
-# ## Crawl data
-# 
-# Data to be crawled:
-# - Daily
-#     - Công ty (Companies):
-#     
-#         - Danh sách công ty (Company listing)
-#         - Mức biến động giá cổ phiếu (Ticker price volatility)
-#         - Thông tin giao dịch nội bộ (Company insider deals)
-#         - Thông tin sự kiện quyền (Company events)
-#         - Tin tức công ty (Company news)
-#         
-#         - Giá cổ phiếu (Stock history)
-#         - Dữ liệu khớp lệnh trong ngày giao dịch (Stock intraday)
-#         - Định giá cổ phiếu (Stock evaluation)
-#         - Đánh giá cổ phiếu (Stock rating)
-#     - Quỹ (Funds):
-#         - Danh sách quỹ (Funds listing)
-#         - Các mã quỹ nắm giữ (Top holding list details)
-#         - Ngành mà quỹ đang đầu tư (Industry holding list details)
-#         - Báo cáo NAV (Nav report)
-#         
-#         - Tỉ trọng tài sản nắm giữ (Asset holding list)
-#         
-# - Quarterly:
-#     - Thông tin tổng quan (Company overview)
-#     - Hồ sơ công ty (Company profile)
-#     - Danh sách cổ đông (Company large shareholders)
-#     - Các chỉ số tài chính cơ bản (Company fundamental ratio)
-#     - Danh sách công ty con, công ty liên kết (Company subsidiaries listing)
-#     - Ban lãnh đạo công ty (Company officers)
-#     - Chỉ số tài chính cơ bản (Financial ratio)
-# 
-#     - Báo cáo kinh doanh (Income statement)
-#     - Bảng cân đối kế toán (Balance sheet)
-#     - Báo cáo lưu chuyển tiền tệ (Cash flow)
+# Crawled data 
+'''
+Data to be crawled:
+- Daily
+    - Công ty (Companies):
+    
+        - Danh sách công ty (Company listing)
+        - Mức biến động giá cổ phiếu (Ticker price volatility)
+        - Thông tin giao dịch nội bộ (Company insider deals)
+        - Thông tin sự kiện quyền (Company events)
+        - Tin tức công ty (Company news)
+        
+        - Giá cổ phiếu (Stock history)
+        - Dữ liệu khớp lệnh trong ngày giao dịch (Stock intraday)
+        - Định giá cổ phiếu (Stock evaluation)
+        - Đánh giá cổ phiếu (Stock rating)
+    - Quỹ (Funds):
+        - Danh sách quỹ (Funds listing)
+        - Các mã quỹ nắm giữ (Top holding list details)
+        - Ngành mà quỹ đang đầu tư (Industry holding list details)
+        - Báo cáo NAV (Nav report)
+        
+        - Tỉ trọng tài sản nắm giữ (Asset holding list)
+        
+- Quarterly:
+    - Thông tin tổng quan (Company overview)
+    - Hồ sơ công ty (Company profile)
+    - Danh sách cổ đông (Company large shareholders)
+    - Các chỉ số tài chính cơ bản (Company fundamental ratio)
+    - Danh sách công ty con, công ty liên kết (Company subsidiaries listing)
+    - Ban lãnh đạo công ty (Company officers)
+    - Chỉ số tài chính cơ bản (Financial ratio)
 
-# ## Daily
+    - Báo cáo kinh doanh (Income statement)
+    - Bảng cân đối kế toán (Balance sheet)
+    - Báo cáo lưu chuyển tiền tệ (Cash flow)
+'''
 
-# ### Companies
+#------------------------------------------------------------------------
 
-# #### Danh sách công ty (Company listing)
+# Daily
 
+# Companies
 
+# Danh sách công ty (Company listing)
 def capture_company_listing():
     try:
         df = listing_companies(live=True)
@@ -80,10 +83,7 @@ def capture_company_listing():
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# #### Mức biến động giá cổ phiếu (Ticker price volatility)
-
-
+# Mức biến động giá cổ phiếu (Ticker price volatility)
 def capture_ticker_volatility(*args):
     symbol = args[0]
     try:
@@ -96,8 +96,7 @@ def capture_ticker_volatility(*args):
     return df
 
 
-# #### Thông tin giao dịch nội bộ (Company insider deals)
-
+# Thông tin giao dịch nội bộ (Company insider deals)
 def capture_insider_deals(*args, page_size=30):
     symbol = args[0]
     capture_date = args[1]
@@ -115,9 +114,7 @@ def capture_insider_deals(*args, page_size=30):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df[df['dealAnnounceDate'] == date_string]
 
-
-# #### Thông tin sự kiện quyền (Company events)
-
+# Thông tin sự kiện quyền (Company events)
 def capture_company_event(*args, page_size=10):
     symbol = args[0]
     capture_date = args[1]
@@ -136,9 +133,7 @@ def capture_company_event(*args, page_size=10):
     df["exerDateFormatted"] = pd.to_datetime(df['exerDate'], format="%Y-%m-%d %H:%M:%S")
     return df[df['exerDateFormatted'] == capture_date]
 
-
-# #### Tin tức công ty (Company news)
-
+# Tin tức công ty (Company news)
 def capture_company_news(*args, page_size=10):
     symbol = args[0]
     capture_date = args[1]
@@ -159,8 +154,7 @@ def capture_company_news(*args, page_size=10):
     return df[df['publishDateFormatted'] == capture_date]
 
 
-# #### Giá cổ phiếu (Stock history) 
-
+# Giá cổ phiếu (Stock history) 
 def capture_stock_history(*args):
     symbol = args[0]
     capture_date = args[1]
@@ -185,9 +179,7 @@ def capture_stock_history(*args):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# #### Dữ liệu khớp lệnh trong ngày giao dịch (Stock intraday)
-
+# Dữ liệu khớp lệnh trong ngày giao dịch (Stock intraday)
 def capture_stock_intraday(*args, page_size=1000):
     symbol = args[0]
     
@@ -203,9 +195,7 @@ def capture_stock_intraday(*args, page_size=1000):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# #### Định giá cổ phiếu (Stock evaluation)
-
+# Định giá cổ phiếu (Stock evaluation)
 def capture_stock_evaluation(*args):
     symbol = args[0]
     capture_date = args[1]
@@ -224,9 +214,7 @@ def capture_stock_evaluation(*args):
     return df[df['fromDate'] == date_string]
 
 
-# #### Đánh giá cổ phiếu (Stock rating)
-
-
+# Đánh giá cổ phiếu (Stock rating)
 def capture_stock_rating(*args):
     symbol = args[0]
 
@@ -251,9 +239,7 @@ def capture_stock_rating(*args):
     df_merged = df_merged.apply(pd.to_numeric, errors='ignore')
     return df_merged
 
-
-# #### Crawl all daily companies data and store
-
+# Crawl all daily companies data and store
 def retry_request(func, *args, max_retries=3, retry_delay=20):
     for _ in range(max_retries):
         try:
@@ -352,10 +338,9 @@ def capture_all_stock_data(capture_date, file_path, limit=None):
     return company_listing_df, *data_dict.values()
 
 
-# ### Funds
+# Funds
 
-# #### Danh sách quỹ (Funds listing)
-
+# Danh sách quỹ (Funds listing)
 def capture_fund_listing():
     try:
         df = funds_listing(
@@ -371,13 +356,13 @@ def capture_fund_listing():
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# #### Fund Details
-# - Các mã quỹ nắm giữ (Top holding list details)
-# - Ngành mà quỹ đang đầu tư (Industry holding list details)
-# - Báo cáo NAV (Nav report)
-# - Tỉ trọng tài sản nắm giữ (Asset holding list)
-
+# Fund Details
+'''
+- Các mã quỹ nắm giữ (Top holding list details)
+- Ngành mà quỹ đang đầu tư (Industry holding list details)
+- Báo cáo NAV (Nav report)
+- Tỉ trọng tài sản nắm giữ (Asset holding list)
+'''
 FUND_DETAILS_CATE = ["top_holding_list", "industry_holding_list", "nav_report", "asset_holding_list"]
 def capture_fund_details(*args):
     symbol = args[0]
@@ -405,10 +390,7 @@ def capture_fund_details(*args):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# #### Crawl all funds daily data and store
-
-
+# Crawl all funds daily data and store
 def capture_all_fund_data(capture_date, file_path, limit=None):
     logger.info("Capture all daily fund data started.")
     fund_listing_df = capture_fund_listing()
@@ -424,11 +406,7 @@ def capture_all_fund_data(capture_date, file_path, limit=None):
     logger.info("Capture all daily fund data ended.")
     return fund_listing_df, *data_dict.values() 
     
-
-
-# #### Crawl all daily data and store
-
-
+# Crawl all daily data and store
 def capture_all_daily(capture_date, limit=None):
     logger.info("Capture all daily data started.")
     date_string = capture_date.strftime("%d-%m-%Y")
@@ -443,12 +421,11 @@ def capture_all_daily(capture_date, limit=None):
     logger.info("Capture all daily data ended.")
     return all_stock_data
 
+#------------------------------------------------------------------------
 
-# ## Quarterly
+# Quarterly
 
-# ### Thông tin tổng quan (Company overview)
-
-
+# Thông tin tổng quan (Company overview)
 def capture_company_overview(*args):
     symbol = args[0]
 
@@ -462,10 +439,7 @@ def capture_company_overview(*args):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# ### Hồ sơ công ty (Company profile)
-
-
+# Hồ sơ công ty (Company profile)
 def capture_company_profile(*args):
     symbol = args[0]
 
@@ -479,10 +453,7 @@ def capture_company_profile(*args):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# ### Danh sách cổ đông (Company large shareholders)
-
-
+# Danh sách cổ đông (Company large shareholders)
 def capture_company_shareholders(*args):
     symbol = args[0]
 
@@ -496,10 +467,7 @@ def capture_company_shareholders(*args):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# ### Các chỉ số tài chính cơ bản (Company fundamental ratio)
-
-
+# Các chỉ số tài chính cơ bản (Company fundamental ratio)
 def capture_fundamental_ratio(*args, mode='', missing_pct=0.8):
     symbol = args[0]
 
@@ -517,10 +485,7 @@ def capture_fundamental_ratio(*args, mode='', missing_pct=0.8):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# ### Danh sách công ty con, công ty liên kết (Company subsidiaries listing)
-
-
+# Danh sách công ty con, công ty liên kết (Company subsidiaries listing)
 def capture_subsidiaries_listing(*args, page_size=100):
     symbol = args[0]
 
@@ -538,9 +503,7 @@ def capture_subsidiaries_listing(*args, page_size=100):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# ### Ban lãnh đạo công ty (Company officers)
-
+# Ban lãnh đạo công ty (Company officers)
 def capture_company_officers(*args, page_size=20):
     symbol = args[0]
 
@@ -559,10 +522,7 @@ def capture_company_officers(*args, page_size=20):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# ### Chỉ số tài chính cơ bản (Financial ratio)
-
-
+# Chỉ số tài chính cơ bản (Financial ratio)
 def capture_financial_ratio(*args, page_size=20):
     symbol = args[0]
 
@@ -581,13 +541,12 @@ def capture_financial_ratio(*args, page_size=20):
     df = df.apply(pd.to_numeric, errors='ignore')    
     return df.iloc[:, 0].T.to_frame().T
 
-
-# ### Báo cáo tài chính (Financial report)
-# - Báo cáo kinh doanh (Income statement)
-# - Bảng cân đối kế toán (Balance sheet)
-# - Báo cáo lưu chuyển tiền tệ (Cash flow)
-
-
+# Báo cáo tài chính (Financial report)
+'''
+- Báo cáo kinh doanh (Income statement)
+- Bảng cân đối kế toán (Balance sheet)
+- Báo cáo lưu chuyển tiền tệ (Cash flow)
+'''
 REPORT_TYPE = ['IncomeStatement', 'BalanceSheet', 'CashFlow']
 def capture_income_statement(*args):
     symbol = args[0]
@@ -615,9 +574,7 @@ def capture_income_statement(*args):
     df = df.apply(pd.to_numeric, errors='ignore')
     return df
 
-
-# ### Crawl all quarterly data and store
-
+# Crawl all quarterly data and store
 def capture_all_quarterly_data(capture_date, limit=None):
     logger.info("Capture all quarterly data started.")
 
@@ -652,9 +609,9 @@ def capture_all_quarterly_data(capture_date, limit=None):
     logger.info("Capture all quarterly data ended.")
     return company_listing_df, *data_dict.values()
 
+#------------------------------------------------------------------------
 
-# ## Capture all data
-
+#  Capture all data
 CAPTURE_OPTION = {
     0: "DAILY",
     1: "QUARTERLY",

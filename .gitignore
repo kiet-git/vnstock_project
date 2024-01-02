@@ -1,8 +1,12 @@
 #Environment
-.ipynb_checkpoints/
 venv/
 .DS_Store
+
+#Caches
 __pycache__/
+.ipynb_checkpoints/
+
+#Error screenshots
 error_ss/
 
 #Airflow

@@ -1,52 +1,100 @@
-2023-12-28 13:30:53,216 - INFO - Capture all daily data started.
-2023-12-28 13:30:53,220 - INFO - Capture all daily company data started.
-2023-12-28 13:32:24,274 - INFO - Capture all daily company data ended.
-2023-12-28 13:32:24,275 - INFO - Capture all daily fund data started.
-2023-12-28 13:32:46,180 - INFO - Capture all daily fund data ended.
-2023-12-28 13:32:46,181 - INFO - Capture all daily data ended.
-2023-12-28 13:32:46,183 - INFO - Capture all quarterly data started.
-2023-12-28 13:33:05,352 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
-2023-12-28 13:33:08,865 - ERROR - Error capturing company subsidiaries listing for symbol ABI: "['no'] not found in axis"
-2023-12-28 13:33:15,707 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
-2023-12-28 13:33:21,762 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 13:33:24,525 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 13:33:27,752 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 13:33:30,513 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 13:33:33,376 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 13:33:36,310 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 13:33:38,072 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 13:33:39,614 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 13:33:44,994 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 13:33:47,431 - INFO - Capture all quarterly data ended.
-2023-12-28 18:11:21,382 - INFO - File path: /Users/TuanKiet/Desktop/DSLearn/vnstock_project
-2023-12-28 20:37:34,369 - INFO - /Users/TuanKiet/Desktop/DSLearn/vnstock_project/
-2023-12-28 20:37:34,370 - INFO - Capture all quarterly data started.
-2023-12-28 20:37:35,774 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
-2023-12-28 20:37:36,226 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
-2023-12-28 20:37:39,122 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 20:37:39,526 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 20:37:39,892 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 20:37:40,343 - INFO - Capture all quarterly data ended.
-2023-12-28 14:07:43,312 - INFO - Capture all daily data started.
-2023-12-28 14:07:43,323 - INFO - Capture all daily company data started.
-2023-12-28 14:07:50,503 - ERROR - Error capturing historical data for symbol A32: stock_historical_data() got an unexpected keyword argument 'decor'
-2023-12-28 14:07:50,599 - ERROR - Error capturing stock intraday data for symbol A32: stock_intraday_data() got an unexpected keyword argument 'investor_segment'
-2023-12-28 14:08:05,799 - INFO - Capture all daily company data ended.
-2023-12-28 14:08:05,835 - INFO - Capture all daily fund data started.
-2023-12-28 14:08:05,852 - ERROR - Error capturing fund listing data: name 'funds_listing' is not defined
-2023-12-28 16:01:19,210 - INFO - Capture all daily data started.
-2023-12-28 16:01:19,221 - INFO - Capture all daily company data started.
-2023-12-28 16:01:57,328 - INFO - Capture all daily company data ended.
-2023-12-28 16:01:57,357 - INFO - Capture all daily fund data started.
-2023-12-28 16:01:57,398 - ERROR - Error capturing fund listing data: name 'funds_listing' is not defined
-2023-12-28 16:09:19,118 - INFO - Capture all daily data started.
-2023-12-28 16:09:19,133 - INFO - Capture all daily company data started.
-2023-12-28 16:09:53,307 - INFO - Capture all daily company data ended.
-2023-12-28 16:09:53,316 - INFO - Capture all daily data ended.
-2023-12-28 16:11:13,330 - INFO - Capture all quarterly data started.
-2023-12-28 16:11:17,670 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
-2023-12-28 16:11:18,756 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
-2023-12-28 16:11:19,365 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 16:11:19,885 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 16:11:20,699 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2023-12-28 16:11:23,769 - INFO - Capture all quarterly data ended.
+2024-01-03 09:44:12,291 - INFO - Capture all daily data started.
+2024-01-03 09:44:12,319 - INFO - Capture all daily company data started.
+2024-01-03 09:47:08,877 - INFO - Capture all daily company data ended.
+2024-01-03 09:47:08,881 - INFO - Capture all daily data ended.
+2024-01-03 09:54:20,222 - INFO - Capture all daily data started.
+2024-01-03 09:54:20,241 - INFO - Capture all daily company data started.
+2024-01-03 09:55:51,156 - INFO - Capture all daily company data ended.
+2024-01-03 09:55:51,160 - INFO - Capture all daily data ended.
+2024-01-03 09:58:57,631 - INFO - Capture all quarterly data started.
+2024-01-03 09:59:23,749 - INFO - Capture all quarterly data started.
+2024-01-03 09:59:27,792 - INFO - Capture all quarterly data started.
+2024-01-03 10:00:22,417 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2024-01-03 10:00:29,232 - ERROR - Error capturing company subsidiaries listing for symbol ABI: "['no'] not found in axis"
+2024-01-03 10:00:31,534 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2024-01-03 10:00:33,364 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2024-01-03 10:00:39,710 - ERROR - Error capturing company subsidiaries listing for symbol ABI: 'listSubCompany'
+2024-01-03 10:00:39,980 - ERROR - Error capturing company subsidiaries listing for symbol ABC: 'listSubCompany'
+2024-01-03 10:00:40,581 - ERROR - Error capturing company officers (BOD) for symbol ABI: 'listKeyOfficer'
+2024-01-03 10:00:40,819 - ERROR - Error capturing company subsidiaries listing for symbol ABR: 'listSubCompany'
+2024-01-03 10:00:41,051 - ERROR - Error capturing company subsidiaries listing for symbol ABI: 'listSubCompany'
+2024-01-03 10:00:41,797 - ERROR - Error capturing company officers (BOD) for symbol ABR: 'listKeyOfficer'
+2024-01-03 10:00:42,447 - ERROR - Error capturing company officers (BOD) for symbol A32: 'listKeyOfficer'
+2024-01-03 10:00:43,049 - ERROR - Error capturing company subsidiaries listing for symbol ABR: 'listSubCompany'
+2024-01-03 10:00:43,357 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2024-01-03 10:00:43,552 - ERROR - Error capturing company officers (BOD) for symbol AAA: 'listKeyOfficer'
+2024-01-03 10:00:43,908 - ERROR - Error capturing company officers (BOD) for symbol A32: 'listKeyOfficer'
+2024-01-03 10:00:44,464 - ERROR - Error capturing financial ratio for symbol AAA: 'quarter'
+2024-01-03 10:00:44,546 - ERROR - Error capturing company officers (BOD) for symbol AAM: 'listKeyOfficer'
+2024-01-03 10:00:44,960 - ERROR - Error capturing company officers (BOD) for symbol AAA: 'listKeyOfficer'
+2024-01-03 10:00:46,172 - ERROR - Error capturing company officers (BOD) for symbol AAM: 'listKeyOfficer'
+2024-01-03 10:00:46,303 - ERROR - Error capturing financial ratio for symbol AAM: 'quarter'
+2024-01-03 10:00:46,392 - ERROR - Error capturing company officers (BOD) for symbol AAS: 'listKeyOfficer'
+2024-01-03 10:00:46,930 - ERROR - Error capturing company officers (BOD) for symbol AAS: 'listKeyOfficer'
+2024-01-03 10:00:47,102 - ERROR - Error capturing financial ratio for symbol AAS: 'quarter'
+2024-01-03 10:00:47,221 - ERROR - Error capturing company officers (BOD) for symbol AAT: 'listKeyOfficer'
+2024-01-03 10:00:47,727 - ERROR - Error capturing company officers (BOD) for symbol AAT: 'listKeyOfficer'
+2024-01-03 10:00:47,833 - ERROR - Error capturing financial ratio for symbol AAT: 'quarter'
+2024-01-03 10:00:47,948 - ERROR - Error capturing company officers (BOD) for symbol AAV: 'listKeyOfficer'
+2024-01-03 10:00:48,469 - ERROR - Error capturing company officers (BOD) for symbol ABB: 'listKeyOfficer'
+2024-01-03 10:00:48,505 - ERROR - Error capturing company officers (BOD) for symbol AAV: 'listKeyOfficer'
+2024-01-03 10:00:48,608 - ERROR - Error capturing financial ratio for symbol AAV: 'quarter'
+2024-01-03 10:00:49,052 - ERROR - Error capturing company officers (BOD) for symbol ABC: 'listKeyOfficer'
+2024-01-03 10:00:49,125 - ERROR - Error capturing company officers (BOD) for symbol ABB: 'listKeyOfficer'
+2024-01-03 10:00:49,254 - ERROR - Error capturing financial ratio for symbol ABB: 'quarter'
+2024-01-03 10:00:49,582 - ERROR - Error capturing company officers (BOD) for symbol ABI: 'listKeyOfficer'
+2024-01-03 10:00:49,711 - ERROR - Error capturing financial ratio for symbol ABC: 'quarter'
+2024-01-03 10:00:49,715 - ERROR - Error capturing company officers (BOD) for symbol ABC: 'listKeyOfficer'
+2024-01-03 10:00:50,371 - ERROR - Error capturing company officers (BOD) for symbol ABR: 'listKeyOfficer'
+2024-01-03 10:00:50,519 - ERROR - Error capturing company officers (BOD) for symbol ABI: 'listKeyOfficer'
+2024-01-03 10:00:50,622 - ERROR - Error capturing financial ratio for symbol ABI: 'quarter'
+2024-01-03 10:00:51,231 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2024-01-03 10:00:51,660 - ERROR - Error capturing company officers (BOD) for symbol ABR: 'listKeyOfficer'
+2024-01-03 10:00:51,695 - ERROR - Error capturing financial ratio for symbol ABR: 'quarter'
+2024-01-03 10:00:52,198 - ERROR - Error capturing financial ratio for symbol AAA: 'quarter'
+2024-01-03 10:00:52,489 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2024-01-03 10:00:52,794 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:00:53,122 - ERROR - Error capturing financial ratio for symbol AAM: 'quarter'
+2024-01-03 10:00:53,363 - ERROR - Error capturing financial ratio for symbol AAA: 'quarter'
+2024-01-03 10:00:53,747 - ERROR - Error capturing financial ratio for symbol AAS: 'quarter'
+2024-01-03 10:00:53,849 - ERROR - Error capturing financial ratio for symbol AAM: 'quarter'
+2024-01-03 10:00:54,405 - ERROR - Error capturing financial ratio for symbol AAT: 'quarter'
+2024-01-03 10:00:54,507 - ERROR - Error capturing financial ratio for symbol AAS: 'quarter'
+2024-01-03 10:00:55,068 - ERROR - Error capturing financial ratio for symbol AAV: 'quarter'
+2024-01-03 10:00:55,243 - ERROR - Error capturing financial ratio for symbol AAT: 'quarter'
+2024-01-03 10:00:55,758 - ERROR - Error capturing financial ratio for symbol AAV: 'quarter'
+2024-01-03 10:00:55,805 - ERROR - Error capturing financial ratio for symbol ABB: 'quarter'
+2024-01-03 10:00:56,831 - ERROR - Error capturing financial ratio for symbol ABC: 'quarter'
+2024-01-03 10:00:56,834 - ERROR - Error capturing financial ratio for symbol ABB: 'quarter'
+2024-01-03 10:00:57,474 - ERROR - Error capturing financial ratio for symbol ABI: 'quarter'
+2024-01-03 10:00:57,521 - ERROR - Error capturing financial ratio for symbol ABC: 'quarter'
+2024-01-03 10:00:57,964 - ERROR - Error capturing financial ratio for symbol ABI: 'quarter'
+2024-01-03 10:00:58,006 - ERROR - Error capturing financial ratio for symbol ABR: 'quarter'
+2024-01-03 10:00:58,256 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:00:58,259 - ERROR - Error capturing financial ratio for symbol ABR: 'quarter'
+2024-01-03 10:00:58,449 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:00:58,933 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:01,906 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:02,811 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:03,744 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:04,337 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:05,930 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:06,759 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:06,809 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:08,144 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:11,671 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:12,650 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:13,197 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:15,013 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:15,515 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:17,475 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:18,510 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:18,819 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:20,095 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:24,207 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:24,357 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:25,352 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:28,883 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:34,989 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:37,929 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-03 10:01:45,341 - INFO - Capture all quarterly data ended.

@@ -11,22 +11,6 @@ import re
 import logging
 import os
 
-# Set up logger
-logger = logging.getLogger('server_logger')
-logger.setLevel(logging.ERROR)
-logger.setLevel(logging.INFO)
-
-for handler in logger.handlers:
-    print(handler)
-    logger.removeHandler(handler)
-
-if not len(logger.handlers) > 0:
-    file_handler = logging.FileHandler(f'/opt/airflow/data/logs.log')
-
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
-
 
 # Crawled data 
 '''
@@ -611,19 +595,47 @@ def capture_all_quarterly_data(capture_date, limit=None):
 
 #------------------------------------------------------------------------
 
-#  Capture all data
+# Set up logger
+def create_logger():
+    logger = logging.getLogger('server_logger')
+    logger.setLevel(logging.ERROR)
+    logger.setLevel(logging.INFO)
+
+    for handler in logger.handlers:
+        print(handler)
+        logger.removeHandler(handler)
+
+    if not len(logger.handlers) > 0:
+        file_handler = logging.FileHandler(f'/opt/airflow/data/logs.log')
+
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+
+    return logger
+
+# Capture all data
 CAPTURE_OPTION = {
     0: "DAILY",
     1: "QUARTERLY",
     2: "BOTH"
 }
 
-def capture_all_data(capture_date, limit=None, option=2):
+logger = create_logger()
+def capture_all_data(capture_date, limit=None, option=2):    
+    CAPTURE_OPTION = {
+        0: "DAILY",
+        1: "QUARTERLY",
+        2: "BOTH"
+    }
+    REPORT_TYPE = ['IncomeStatement', 'BalanceSheet', 'CashFlow']
+    FUND_DETAILS_CATE = ["top_holding_list", "industry_holding_list", "nav_report", "asset_holding_list"]
+
     if option not in CAPTURE_OPTION:
         error_message = f"Invalid option '{option}'. Please provide a valid option from {CAPTURE_OPTION}."
         logger.error(error_message)
         raise ValueError(error_message)
-
+    
     if option == 0:
         capture_all_daily(capture_date, limit)
     elif option == 1:
@@ -631,5 +643,3 @@ def capture_all_data(capture_date, limit=None, option=2):
     elif option == 2:
         capture_all_daily(capture_date, limit)
         capture_all_quarterly_data(capture_date, limit)
-
-# capture_all_data(datetime(2023, 12, 25), 1, 1)

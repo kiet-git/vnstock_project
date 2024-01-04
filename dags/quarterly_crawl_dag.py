@@ -17,7 +17,7 @@ with DAG(
     tags=["crawl"],
     description='DAG to craw data quaterly'
 ) as dag:
-    from data_crawling import capture_all_data
+    from modules.data_crawling import capture_all_data
 
     single_task = PythonOperator(
         task_id='single_task',

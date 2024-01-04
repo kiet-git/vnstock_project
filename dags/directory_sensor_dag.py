@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.sensors.filesystem import FileSensor
@@ -25,7 +26,14 @@ directory_sensor_task = FileSensor(
     dag=dag,
 )
 
-bash_command = 'docker exec -it namenode bash -c "hdfs dfs -put /opt/airflow/data/outputs/* /user/data/outputs/"'
+source_directory = '/opt/airflow/data/outputs/'
+
+bash_command = ''
+for filename in os.listdir(source_directory):
+    if filename.endswith(".xlsx"):
+        full_path = os.path.join(source_directory, filename)
+        curl_command = f'curl -v -i -X PUT -T {full_path} "http://host.docker.internal:9864/webhdfs/v1/user_data/{filename}?op=CREATE&namenoderpcaddress=namenode:9000"\n'
+        bash_command += curl_command
 
 move_files_task = BashOperator(
     task_id='move_files_task',

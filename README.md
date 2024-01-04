@@ -71,3 +71,58 @@ docker compose down --volumes --rmi all
 ```
 
 Feel free to explore and practice with the provided data using this automated Apache Airflow setup. For any additional information, refer to the linked documentation.
+
+## Hadoop Operations (with WebHDFS)
+Taken from [WebHDFS](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html#CREATE).
+
+### Check HDFS Status
+
+To check the status of HDFS, use the following command:
+
+```bash
+curl -i -X PUT "http://localhost:9870/webhdfs/v1/user_data?op=CREATE"
+```
+
+This command initiates a PUT request to the specified WebHDFS endpoint, checking the HDFS status.
+
+### Create a New File
+
+To create a new file, execute the following command:
+
+```bash
+curl -i -X PUT -T <LOCAL_FILE> "http://<DATANODE>:<PORT>/webhdfs/v1/<PATH>?op=CREATE&namenoderpcaddress=namenode:9000"
+```
+
+Replace `<LOCAL_FILE>`, `<DATANODE>`, `<PORT>`, and `<PATH>` with your local file path, datanode information, port, and HDFS path respectively.
+
+Example:
+
+```bash
+curl -v -i -X PUT -T ./data/outputs/output_daily_03-01-2024.xlsx "http://localhost:9864/webhdfs/v1/user_data/output_daily_03-01-2024.xlsx?op=CREATE&namenoderpcaddress=namenode:9000"
+```
+
+### Open a File
+
+To open a file, use the following command:
+
+```bash
+curl -i "http://<DATANODE>:<PORT>/webhdfs/v1/<PATH>?op=OPEN&namenoderpcaddress=namenode:9000&offset=0" -o <PATH>
+```
+
+Example:
+
+```bash
+curl -i "http://localhost:9864/webhdfs/v1/user_data/output_daily_03-01-2024.xlsx?op=OPEN&namenoderpcaddress=namenode:9000&offset=0" -o output_daily_03-01-2024.xlsx
+```
+
+This command initiates a GET request to open the specified file in HDFS.
+
+### Show All Subdirectories
+
+To display information about all subdirectories, use the following command:
+
+```bash
+curl -i "http://localhost:9870/webhdfs/v1/user_data?op=LISTSTATUS"
+```
+
+This command initiates a GET request to list the status of all subdirectories in the specified HDFS path.

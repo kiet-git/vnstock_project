@@ -1,6 +1,42 @@
 # Practice Data Project
 
-This repository contains information and instructions for setting up a practice data project using data from [vnstock](https://github.com/thinh-vu/vnstock). The primary focus is on automating tasks using Apache Airflow.
+This repository contains information and instructions for setting up a practice data project using data from [vnstock](https://github.com/thinh-vu/vnstock).
+
+## Data to be Crawled:
+
+The following data will be crawled:
+- **Daily**
+    - **Công ty (Companies):**
+        - Danh sách công ty (Company listing)
+        - Mức biến động giá cổ phiếu (Ticker price volatility)
+        - Thông tin giao dịch nội bộ (Company insider deals)
+        - Thông tin sự kiện quyền (Company events)
+        - Tin tức công ty (Company news)
+        - Giá cổ phiếu (Stock history)
+        - Dữ liệu khớp lệnh trong ngày giao dịch (Stock intraday)
+        - Định giá cổ phiếu (Stock evaluation)
+        - Đánh giá cổ phiếu (Stock rating)
+        
+    - **Quỹ (Funds):**
+        - Danh sách quỹ (Funds listing)
+        - Các mã quỹ nắm giữ (Top holding list details)
+        - Ngành mà quỹ đang đầu tư (Industry holding list details)
+        - Báo cáo NAV (Nav report)
+        - Tỉ trọng tài sản nắm giữ (Asset holding list)
+        
+- **Quarterly:**
+    - Thông tin tổng quan (Company overview)
+    - Hồ sơ công ty (Company profile)
+    - Danh sách cổ đông (Company large shareholders)
+    - Các chỉ số tài chính cơ bản (Company fundamental ratio)
+    - Danh sách công ty con, công ty liên kết (Company subsidiaries listing)
+    - Ban lãnh đạo công ty (Company officers)
+    - Chỉ số tài chính cơ bản (Financial ratio)
+    - Báo cáo kinh doanh (Income statement)
+    - Bảng cân đối kế toán (Balance sheet)
+    - Báo cáo lưu chuyển tiền tệ (Cash flow)
+
+Please be advised that the functionality to capture funds is specifically accessible in `vnstock` version `0.2.8.7` and beyond. It's crucial to acknowledge that this version is not compatible with Python 3.8, the latest Python version for Airflow with Docker.
 
 ## Automation with Airflow
 This project leverages the Docker environment for executing Apache Airflow. For comprehensive guidance, consult the detailed documentation available at [Airflow Documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html).
@@ -70,30 +106,51 @@ To stop and delete containers, delete volumes with database data, and download i
 docker compose down --volumes --rmi all
 ```
 
-Feel free to explore and practice with the provided data using this automated Apache Airflow setup. For any additional information, refer to the linked documentation.
+## Store data in HDFS with Docker
 
-## Hadoop Operations (with WebHDFS)
-Taken from [WebHDFS](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html#CREATE).
+### Getting Started
+1. **Clone the Repository:**
+   Clone the Docker Hadoop repository from GitHub.
 
-### Check HDFS Status
+   ```bash
+   git clone https://github.com/big-data-europe/docker-hadoop
+   ```
 
-To check the status of HDFS, use the following command:
+2. **Start Hadoop Cluster:**
+   Move into the cloned repository and start the Hadoop cluster using Docker Compose.
+
+   ```bash
+   cd docker-hadoop
+   docker-compose up -d
+   ```
+
+   This command launches the Hadoop services in detached mode.
+
+### Accessing the Web Interface
+The Hadoop webserver is available at: [http://localhost:9870](http://localhost:9870).
+
+### WebHDFS commands to access HDFS
+The complete documentation for WebHDFS commands can be found [here](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html#CREATE).
+
+**Check HDFS Status:** 
+To check the status of HDFS, initiate a PUT request to the WebHDFS endpoint.
 
 ```bash
 curl -i -X PUT "http://localhost:9870/webhdfs/v1/user_data?op=CREATE"
 ```
 
-This command initiates a PUT request to the specified WebHDFS endpoint, checking the HDFS status.
+*Note: If running in Airflow jobs, replace `localhost` with `host.docker.internal`.*
 
-### Create a New File
+This command checks the HDFS status and ensures that the Hadoop cluster is running properly.
 
-To create a new file, execute the following command:
+**Create a New File:**
+Create a new file in HDFS by executing a PUT request with the local file.
 
 ```bash
 curl -i -X PUT -T <LOCAL_FILE> "http://<DATANODE>:<PORT>/webhdfs/v1/<PATH>?op=CREATE&namenoderpcaddress=namenode:9000"
 ```
 
-Replace `<LOCAL_FILE>`, `<DATANODE>`, `<PORT>`, and `<PATH>` with your local file path, datanode information, port, and HDFS path respectively.
+Replace `<LOCAL_FILE>`, `<DATANODE>`, `<PORT>`, and `<PATH>` with your specific details.
 
 Example:
 
@@ -101,12 +158,11 @@ Example:
 curl -v -i -X PUT -T ./data/outputs/output_daily_03-01-2024.xlsx "http://localhost:9864/webhdfs/v1/user_data/output_daily_03-01-2024.xlsx?op=CREATE&namenoderpcaddress=namenode:9000"
 ```
 
-### Open a File
-
-To open a file, use the following command:
+**Open a File:**
+Open a file from HDFS using a GET request.
 
 ```bash
-curl -i "http://<DATANODE>:<PORT>/webhdfs/v1/<PATH>?op=OPEN&namenoderpcaddress=namenode:9000&offset=0" -o <PATH>
+curl -i "http://<DATANODE>:<PORT>/webhdfs/v1/<PATH>?op=OPEN&namenoderpcaddress=namenode:9000&offset=0" -o <LOCAL_PATH>
 ```
 
 Example:
@@ -115,14 +171,17 @@ Example:
 curl -i "http://localhost:9864/webhdfs/v1/user_data/output_daily_03-01-2024.xlsx?op=OPEN&namenoderpcaddress=namenode:9000&offset=0" -o output_daily_03-01-2024.xlsx
 ```
 
-This command initiates a GET request to open the specified file in HDFS.
+*Note: If running in Airflow jobs, replace `<DATANODE>` with `localhost` or `host.docker.internal`.*
 
-### Show All Subdirectories
+This command downloads the specified file from HDFS to your local machine.
 
-To display information about all subdirectories, use the following command:
+**Show All Subdirectories:**
+Display information about all subdirectories in a specific HDFS path.
 
 ```bash
 curl -i "http://localhost:9870/webhdfs/v1/user_data?op=LISTSTATUS"
 ```
 
-This command initiates a GET request to list the status of all subdirectories in the specified HDFS path.
+*Note: If running in Airflow jobs, replace `localhost` with `host.docker.internal`.*
+
+This command lists the status of all subdirectories in the specified HDFS path.

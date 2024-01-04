@@ -1,6 +1,7 @@
 from airflow import DAG
 from datetime import datetime, timedelta
 from airflow.operators.python import PythonOperator
+from airflow.utils.dates import days_ago
 
 default_args = {
     'owner': 'airflow',
@@ -11,8 +12,8 @@ default_args = {
 
 with DAG(
     dag_id="quarterly_crawl_dag",
-    schedule='0 18 1 */3 *',
-    start_date=datetime(2023, 1, 3),
+    schedule='@daily',
+    start_date=days_ago(1),
     default_args=default_args,
     tags=["crawl"],
     description='DAG to craw data quaterly'

@@ -98,3 +98,21 @@
 2024-01-03 10:01:34,989 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
 2024-01-03 10:01:37,929 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
 2024-01-03 10:01:45,341 - INFO - Capture all quarterly data ended.
+2024-01-04 10:43:42,646 - INFO - Capture all daily data started.
+2024-01-04 10:43:42,653 - INFO - Capture all daily company data started.
+2024-01-04 10:44:07,179 - INFO - Capture all quarterly data started.
+2024-01-04 10:44:41,511 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2024-01-04 10:44:54,569 - ERROR - Error capturing company subsidiaries listing for symbol ABI: "['no'] not found in axis"
+2024-01-04 10:45:10,908 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2024-01-04 10:45:21,909 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-04 10:45:29,299 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-04 10:45:32,883 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-04 10:45:35,608 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-04 10:45:39,226 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-04 10:45:54,480 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-04 10:46:01,520 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-04 10:46:04,553 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-04 10:46:09,096 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-04 10:46:22,820 - INFO - Capture all quarterly data ended.
+2024-01-04 10:46:40,394 - INFO - Capture all daily company data ended.
+2024-01-04 10:46:40,400 - INFO - Capture all daily data ended.

@@ -119,6 +119,15 @@ def find_path_for_csv(csv_filename):
                 'Stock evaluation',
                 'Stock rating'
             ]
+        },
+        {
+            'Fund Data': [
+                'Funds listing',
+                'Top holding list',
+                'Industry holding list',
+                'Nav report',
+                'Asset holding list'        
+            ]
         }
     ]   
     csv_filename = extract_csv_filename(csv_filename)
@@ -145,11 +154,11 @@ def find_path_for_csv_helper(substructure, current_path, csv_filename):
         else: 
             return None
     
-def extract_data():
-    source_directory = 'tmp'
+def extract_data(source_directory = 'tmp', **kwargs):
+    download_files(source_directory)
+    convert_excel_to_csv(source_directory)
 
     bash_command = ''
-    count = 0
     for filename in os.listdir(source_directory):
         if filename.endswith(".csv"):
             full_path = os.path.join(source_directory, filename)
@@ -157,6 +166,5 @@ def extract_data():
             full_storage_path = os.path.join(dir_path, filename) if dir_path else ''
             curl_command = f'curl -v -i -X PUT -T {full_path} "http://host.docker.internal:9864/webhdfs/v1/extract_dir/{full_storage_path}?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"\n'
             bash_command += curl_command
-            print(filename, curl_command)
 
-    return bash_command
+    kwargs['ti'].xcom_push(key='bash_command', value=bash_command)

@@ -2,6 +2,8 @@
 
 This repository contains information and instructions for setting up a practice data project using data from [vnstock](https://github.com/thinh-vu/vnstock).
 
+In progress... [diagram](https://lucid.app/lucidchart/81e106bd-b6ea-420d-8667-84196d956d39/edit?viewport_loc=141%2C-20%2C1241%2C714%2C0_0&invitationId=inv_833ee1cc-702d-4235-addd-9cf19ff9b7e2) of the project.
+
 ## Data to be Crawled:
 
 The following data will be crawled:

@@ -623,14 +623,6 @@ CAPTURE_OPTION = {
 
 logger = create_logger()
 def capture_all_data(capture_date, limit=None, option=2):    
-    CAPTURE_OPTION = {
-        0: "DAILY",
-        1: "QUARTERLY",
-        2: "BOTH"
-    }
-    REPORT_TYPE = ['IncomeStatement', 'BalanceSheet', 'CashFlow']
-    FUND_DETAILS_CATE = ["top_holding_list", "industry_holding_list", "nav_report", "asset_holding_list"]
-
     if option not in CAPTURE_OPTION:
         error_message = f"Invalid option '{option}'. Please provide a valid option from {CAPTURE_OPTION}."
         logger.error(error_message)

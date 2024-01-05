@@ -1,8 +1,8 @@
-import os
 from datetime import datetime, timedelta
 from airflow import DAG
-from airflow.sensors import ExternalTaskSensor
+from airflow.sensors.external_task import ExternalTaskSensor
 from airflow.operators.bash import BashOperator
+from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 from modules.extract import extract_data
 
@@ -20,24 +20,31 @@ dag = DAG(
     'extract_dag',
     default_args=default_args,
     description='DAG to extract data',
-    schedule_interval= "0 16 * * *"
+    schedule= "5 13 * * *"
 )
 
-wait_directory_sensor = ExternalTaskSensor(
-    task_id='wait_directory_sensor',
-    external_dag_id='directory_sensor_dag',
-    external_task_id='move_files_task',
-    start_date=days_ago(1),
-    execution_delta=timedelta(hours=3),
-    timeout=3600,
-    mode="reschedule",
-    check_existence=True
+# wait_directory_sensor = ExternalTaskSensor(
+#     task_id='wait_directory_sensor',
+#     external_dag_id='directory_sensor_dag',
+#     external_task_id='move_files_task',
+#     start_date=days_ago(1),
+#     execution_delta=timedelta(minutes=5),
+#     timeout=3600,
+#     mode="reschedule",
+#     check_existence=True
+# )
+
+extract = PythonOperator(
+    task_id='extract_data_task',
+    python_callable=extract_data,
+    op_args=['/opt/airflow/dags/modules/tmp/'],
+    provide_context=True,
+    dag=dag,
 )
 
-bash_command = extract_data()
-extract = BashOperator(
-    task_id='extract_task',
-    bash_command=bash_command,
+store = BashOperator(
+    task_id='store_data_task',
+    bash_command='{{ task_instance.xcom_pull(task_ids=\'extract_data_task\', key=\'bash_command\')}}',
     dag=dag,
 )
 
@@ -47,4 +54,4 @@ delete_tmp = BashOperator(
     dag=dag,
 )
 
-wait_directory_sensor >> extract >> delete_tmp
+extract >> store >> delete_tmp

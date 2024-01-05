@@ -185,3 +185,34 @@ curl -i "http://localhost:9870/webhdfs/v1/user_data?op=LISTSTATUS"
 *Note: If running in Airflow jobs, replace `localhost` with `host.docker.internal`.*
 
 This command lists the status of all subdirectories in the specified HDFS path.
+
+## ETL
+
+### Data Lake structure
+- **Company Data:**
+    - **General Data**
+        - Company listing
+        - Company insider deals
+        - Company events
+        - Company news
+        - Company overview
+        - Company profile
+        - Company large shareholders
+        - Company fundamental ratio
+        - Company subsidiaries listing
+        - Company officers
+        
+    - **Financial Data**
+        - Financial ratio
+        - Income statement
+        - Balance sheet
+        - Cash flow
+
+- **Stock Data:**
+    - Ticker volatility    
+    - Stock history
+    - Stock intraday
+    - Stock evaluation
+    - Stock rating
+        
+   

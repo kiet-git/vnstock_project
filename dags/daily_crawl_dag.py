@@ -12,7 +12,7 @@ default_args = {
 
 with DAG(
     dag_id="daily_crawl_dag",
-    schedule='@daily',
+    schedule='0 10 * * 1-5',
     start_date=days_ago(1),
     default_args=default_args,
     tags=["crawl"],

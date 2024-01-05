@@ -23,6 +23,7 @@ dag = DAG(
     schedule= "5 13 * * *"
 )
 
+#Uncomment this to trigger this job when the directory sensor dag complete
 # wait_directory_sensor = ExternalTaskSensor(
 #     task_id='wait_directory_sensor',
 #     external_dag_id='directory_sensor_dag',

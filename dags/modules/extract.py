@@ -52,7 +52,7 @@ def convert_excel_to_excel(file_path):
     wb.save(file_path)
 
 def download_files(output_folder='tmp'):
-    file_names = get_file_names()
+    file_names = get_file_names_with_today_date(get_file_names())
 
     os.makedirs(output_folder, exist_ok=True)
 

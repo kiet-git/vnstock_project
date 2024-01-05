@@ -216,5 +216,11 @@ This command lists the status of all subdirectories in the specified HDFS path.
     - Stock intraday
     - Stock evaluation
     - Stock rating
-        
+
+- **Fund Data (Yet to implement):**
+    - Funds listing
+    - Top holding list details
+    - Industry holding list details
+    - Nav report
+    - Asset holding list 
    

@@ -19,7 +19,8 @@ dag = DAG(
     'directory_sensor_dag',
     default_args=default_args,
     description='DAG to trigger when a directory has a new file',
-    schedule= "0 13 * * *"
+    schedule= "0 13 * * *",
+    tags=["sensor"],
 )
 
 directory_sensor_task = FileSensor(

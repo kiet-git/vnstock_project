@@ -293,7 +293,7 @@ def export_data_to_excel(data_dict, listing_df, list_name, file_path, capture_mo
                 if 'Ticker' in df.columns:
                     df = df.drop('Ticker', axis=1)
 
-                df.to_excel(writer, sheet_name=convert_column_name(function_name))
+                df.to_excel(writer, sheet_name=convert_column_name(function_name if "capture_" not in function_name else function_name.replace('capture_', '')))
 
 def capture_all_stock_data(capture_date, file_path, limit=None):
     logger.info("Capture all daily company data started.")

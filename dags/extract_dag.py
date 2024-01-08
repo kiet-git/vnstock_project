@@ -20,7 +20,8 @@ dag = DAG(
     'extract_dag',
     default_args=default_args,
     description='DAG to extract data',
-    schedule= "5 13 * * *"
+    schedule= "5 13 * * *",
+    tags=["extract"],
 )
 
 #Uncomment this to trigger this job when the directory sensor dag complete
@@ -55,4 +56,6 @@ delete_tmp = BashOperator(
     dag=dag,
 )
 
+#Uncomment this to trigger this job when the directory sensor dag complete
+# wait_directory_sensor >> extract >> store >> delete_tmp
 extract >> store >> delete_tmp

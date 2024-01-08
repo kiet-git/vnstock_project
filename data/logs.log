@@ -1,118 +1,136 @@
-2024-01-03 09:44:12,291 - INFO - Capture all daily data started.
-2024-01-03 09:44:12,319 - INFO - Capture all daily company data started.
-2024-01-03 09:47:08,877 - INFO - Capture all daily company data ended.
-2024-01-03 09:47:08,881 - INFO - Capture all daily data ended.
-2024-01-03 09:54:20,222 - INFO - Capture all daily data started.
-2024-01-03 09:54:20,241 - INFO - Capture all daily company data started.
-2024-01-03 09:55:51,156 - INFO - Capture all daily company data ended.
-2024-01-03 09:55:51,160 - INFO - Capture all daily data ended.
-2024-01-03 09:58:57,631 - INFO - Capture all quarterly data started.
-2024-01-03 09:59:23,749 - INFO - Capture all quarterly data started.
-2024-01-03 09:59:27,792 - INFO - Capture all quarterly data started.
-2024-01-03 10:00:22,417 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
-2024-01-03 10:00:29,232 - ERROR - Error capturing company subsidiaries listing for symbol ABI: "['no'] not found in axis"
-2024-01-03 10:00:31,534 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
-2024-01-03 10:00:33,364 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
-2024-01-03 10:00:39,710 - ERROR - Error capturing company subsidiaries listing for symbol ABI: 'listSubCompany'
-2024-01-03 10:00:39,980 - ERROR - Error capturing company subsidiaries listing for symbol ABC: 'listSubCompany'
-2024-01-03 10:00:40,581 - ERROR - Error capturing company officers (BOD) for symbol ABI: 'listKeyOfficer'
-2024-01-03 10:00:40,819 - ERROR - Error capturing company subsidiaries listing for symbol ABR: 'listSubCompany'
-2024-01-03 10:00:41,051 - ERROR - Error capturing company subsidiaries listing for symbol ABI: 'listSubCompany'
-2024-01-03 10:00:41,797 - ERROR - Error capturing company officers (BOD) for symbol ABR: 'listKeyOfficer'
-2024-01-03 10:00:42,447 - ERROR - Error capturing company officers (BOD) for symbol A32: 'listKeyOfficer'
-2024-01-03 10:00:43,049 - ERROR - Error capturing company subsidiaries listing for symbol ABR: 'listSubCompany'
-2024-01-03 10:00:43,357 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
-2024-01-03 10:00:43,552 - ERROR - Error capturing company officers (BOD) for symbol AAA: 'listKeyOfficer'
-2024-01-03 10:00:43,908 - ERROR - Error capturing company officers (BOD) for symbol A32: 'listKeyOfficer'
-2024-01-03 10:00:44,464 - ERROR - Error capturing financial ratio for symbol AAA: 'quarter'
-2024-01-03 10:00:44,546 - ERROR - Error capturing company officers (BOD) for symbol AAM: 'listKeyOfficer'
-2024-01-03 10:00:44,960 - ERROR - Error capturing company officers (BOD) for symbol AAA: 'listKeyOfficer'
-2024-01-03 10:00:46,172 - ERROR - Error capturing company officers (BOD) for symbol AAM: 'listKeyOfficer'
-2024-01-03 10:00:46,303 - ERROR - Error capturing financial ratio for symbol AAM: 'quarter'
-2024-01-03 10:00:46,392 - ERROR - Error capturing company officers (BOD) for symbol AAS: 'listKeyOfficer'
-2024-01-03 10:00:46,930 - ERROR - Error capturing company officers (BOD) for symbol AAS: 'listKeyOfficer'
-2024-01-03 10:00:47,102 - ERROR - Error capturing financial ratio for symbol AAS: 'quarter'
-2024-01-03 10:00:47,221 - ERROR - Error capturing company officers (BOD) for symbol AAT: 'listKeyOfficer'
-2024-01-03 10:00:47,727 - ERROR - Error capturing company officers (BOD) for symbol AAT: 'listKeyOfficer'
-2024-01-03 10:00:47,833 - ERROR - Error capturing financial ratio for symbol AAT: 'quarter'
-2024-01-03 10:00:47,948 - ERROR - Error capturing company officers (BOD) for symbol AAV: 'listKeyOfficer'
-2024-01-03 10:00:48,469 - ERROR - Error capturing company officers (BOD) for symbol ABB: 'listKeyOfficer'
-2024-01-03 10:00:48,505 - ERROR - Error capturing company officers (BOD) for symbol AAV: 'listKeyOfficer'
-2024-01-03 10:00:48,608 - ERROR - Error capturing financial ratio for symbol AAV: 'quarter'
-2024-01-03 10:00:49,052 - ERROR - Error capturing company officers (BOD) for symbol ABC: 'listKeyOfficer'
-2024-01-03 10:00:49,125 - ERROR - Error capturing company officers (BOD) for symbol ABB: 'listKeyOfficer'
-2024-01-03 10:00:49,254 - ERROR - Error capturing financial ratio for symbol ABB: 'quarter'
-2024-01-03 10:00:49,582 - ERROR - Error capturing company officers (BOD) for symbol ABI: 'listKeyOfficer'
-2024-01-03 10:00:49,711 - ERROR - Error capturing financial ratio for symbol ABC: 'quarter'
-2024-01-03 10:00:49,715 - ERROR - Error capturing company officers (BOD) for symbol ABC: 'listKeyOfficer'
-2024-01-03 10:00:50,371 - ERROR - Error capturing company officers (BOD) for symbol ABR: 'listKeyOfficer'
-2024-01-03 10:00:50,519 - ERROR - Error capturing company officers (BOD) for symbol ABI: 'listKeyOfficer'
-2024-01-03 10:00:50,622 - ERROR - Error capturing financial ratio for symbol ABI: 'quarter'
-2024-01-03 10:00:51,231 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
-2024-01-03 10:00:51,660 - ERROR - Error capturing company officers (BOD) for symbol ABR: 'listKeyOfficer'
-2024-01-03 10:00:51,695 - ERROR - Error capturing financial ratio for symbol ABR: 'quarter'
-2024-01-03 10:00:52,198 - ERROR - Error capturing financial ratio for symbol AAA: 'quarter'
-2024-01-03 10:00:52,489 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
-2024-01-03 10:00:52,794 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:00:53,122 - ERROR - Error capturing financial ratio for symbol AAM: 'quarter'
-2024-01-03 10:00:53,363 - ERROR - Error capturing financial ratio for symbol AAA: 'quarter'
-2024-01-03 10:00:53,747 - ERROR - Error capturing financial ratio for symbol AAS: 'quarter'
-2024-01-03 10:00:53,849 - ERROR - Error capturing financial ratio for symbol AAM: 'quarter'
-2024-01-03 10:00:54,405 - ERROR - Error capturing financial ratio for symbol AAT: 'quarter'
-2024-01-03 10:00:54,507 - ERROR - Error capturing financial ratio for symbol AAS: 'quarter'
-2024-01-03 10:00:55,068 - ERROR - Error capturing financial ratio for symbol AAV: 'quarter'
-2024-01-03 10:00:55,243 - ERROR - Error capturing financial ratio for symbol AAT: 'quarter'
-2024-01-03 10:00:55,758 - ERROR - Error capturing financial ratio for symbol AAV: 'quarter'
-2024-01-03 10:00:55,805 - ERROR - Error capturing financial ratio for symbol ABB: 'quarter'
-2024-01-03 10:00:56,831 - ERROR - Error capturing financial ratio for symbol ABC: 'quarter'
-2024-01-03 10:00:56,834 - ERROR - Error capturing financial ratio for symbol ABB: 'quarter'
-2024-01-03 10:00:57,474 - ERROR - Error capturing financial ratio for symbol ABI: 'quarter'
-2024-01-03 10:00:57,521 - ERROR - Error capturing financial ratio for symbol ABC: 'quarter'
-2024-01-03 10:00:57,964 - ERROR - Error capturing financial ratio for symbol ABI: 'quarter'
-2024-01-03 10:00:58,006 - ERROR - Error capturing financial ratio for symbol ABR: 'quarter'
-2024-01-03 10:00:58,256 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:00:58,259 - ERROR - Error capturing financial ratio for symbol ABR: 'quarter'
-2024-01-03 10:00:58,449 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:00:58,933 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:01,906 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:02,811 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:03,744 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:04,337 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:05,930 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:06,759 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:06,809 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:08,144 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:11,671 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:12,650 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:13,197 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:15,013 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:15,515 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:17,475 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:18,510 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:18,819 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:20,095 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:24,207 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:24,357 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:25,352 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:28,883 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:34,989 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:37,929 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-03 10:01:45,341 - INFO - Capture all quarterly data ended.
-2024-01-04 10:43:42,646 - INFO - Capture all daily data started.
-2024-01-04 10:43:42,653 - INFO - Capture all daily company data started.
-2024-01-04 10:44:07,179 - INFO - Capture all quarterly data started.
-2024-01-04 10:44:41,511 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
-2024-01-04 10:44:54,569 - ERROR - Error capturing company subsidiaries listing for symbol ABI: "['no'] not found in axis"
-2024-01-04 10:45:10,908 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
-2024-01-04 10:45:21,909 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-04 10:45:29,299 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-04 10:45:32,883 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-04 10:45:35,608 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-04 10:45:39,226 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-04 10:45:54,480 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-04 10:46:01,520 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-04 10:46:04,553 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-04 10:46:09,096 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
-2024-01-04 10:46:22,820 - INFO - Capture all quarterly data ended.
-2024-01-04 10:46:40,394 - INFO - Capture all daily company data ended.
-2024-01-04 10:46:40,400 - INFO - Capture all daily data ended.
+2024-01-05 13:51:10,861 - INFO - Capture all daily data started.
+2024-01-05 13:51:10,876 - INFO - Capture all daily company data started.
+2024-01-05 13:51:58,006 - ERROR - Error capturing stock intraday data for symbol A32: "['cp', 'rcp'] not found in axis"
+2024-01-05 13:52:25,696 - INFO - Capture all quarterly data started.
+2024-01-05 13:53:38,034 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2024-01-05 13:53:48,271 - ERROR - Error capturing company subsidiaries listing for symbol ABI: "['no'] not found in axis"
+2024-01-05 13:53:57,779 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2024-01-05 13:54:05,373 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-05 13:54:10,482 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-05 13:54:15,260 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-05 13:54:18,352 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-05 13:54:22,349 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-05 13:54:26,752 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-05 13:54:29,538 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-05 13:54:31,363 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-05 13:54:34,290 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-05 14:59:59,265 - INFO - Extract data started
+2024-01-05 14:59:59,290 - INFO - Download file from HDFS started
+2024-01-05 15:00:00,739 - INFO - Retrieved file names: ['output_daily_03-01-2024.xlsx', 'output_daily_04-01-2024.xlsx', 'output_daily_05-01-2024.xlsx', 'output_quarterly_03-01-2024.xlsx', 'output_quarterly_04-01-2024.xlsx', 'output_quarterly_05-01-2024.xlsx']
+2024-01-05 15:00:00,749 - INFO - Retrieved 05-01-2024's file names: ['output_daily_03-01-2024.xlsx', 'output_daily_04-01-2024.xlsx', 'output_daily_05-01-2024.xlsx', 'output_quarterly_03-01-2024.xlsx', 'output_quarterly_04-01-2024.xlsx', 'output_quarterly_05-01-2024.xlsx']
+2024-01-05 15:01:09,615 - INFO - Download file from HDFS ended
+2024-01-05 15:01:09,856 - INFO - Convert file from excel to parquet started
+2024-01-05 15:02:21,073 - INFO - Convert file from excel to parquet ended
+2024-01-05 15:07:38,996 - INFO - Extract data started
+2024-01-05 15:07:39,011 - INFO - Download file from HDFS started
+2024-01-05 15:07:40,359 - INFO - Retrieved file names: ['output_daily_03-01-2024.xlsx', 'output_daily_04-01-2024.xlsx', 'output_daily_05-01-2024.xlsx', 'output_quarterly_03-01-2024.xlsx', 'output_quarterly_04-01-2024.xlsx', 'output_quarterly_05-01-2024.xlsx']
+2024-01-05 15:07:40,380 - INFO - Retrieved 05-01-2024's file names: ['output_daily_05-01-2024.xlsx', 'output_quarterly_05-01-2024.xlsx']
+2024-01-05 15:07:53,230 - INFO - Download file from HDFS ended
+2024-01-05 15:07:53,237 - INFO - Convert file from excel to parquet started
+2024-01-05 15:08:09,669 - INFO - Convert file from excel to parquet ended
+2024-01-05 15:08:09,727 - INFO - Extract data ended
+2024-01-05 15:08:09,734 - INFO - Return bash command: curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/balance_sheet_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/balance_sheet_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_officers_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_officers_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_overview_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_overview_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_profile_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_profile_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_shareholders_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_shareholders_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_financial_ratio_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/capture_financial_ratio_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_fundamental_ratio_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_fundamental_ratio_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_history_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_history_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_intraday_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_intraday_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_rating_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_rating_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_subsidiaries_listing_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_subsidiaries_listing_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_ticker_volatility_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_ticker_volatility_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/cash_flow_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/cash_flow_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/company_listing_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/company_listing_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/income_statement_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/income_statement_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+
+2024-01-05 15:15:08,295 - INFO - Extract data started
+2024-01-05 15:15:08,310 - INFO - Download file from HDFS started
+2024-01-05 15:15:09,213 - INFO - Retrieved file names: ['output_daily_03-01-2024.xlsx', 'output_daily_04-01-2024.xlsx', 'output_daily_05-01-2024.xlsx', 'output_quarterly_03-01-2024.xlsx', 'output_quarterly_04-01-2024.xlsx', 'output_quarterly_05-01-2024.xlsx']
+2024-01-05 15:15:09,227 - INFO - Retrieved 05-01-2024's file names: ['output_daily_05-01-2024.xlsx', 'output_quarterly_05-01-2024.xlsx']
+2024-01-05 15:15:24,616 - INFO - Download file from HDFS ended
+2024-01-05 15:15:24,621 - INFO - Convert file from excel to parquet started
+2024-01-05 15:15:37,243 - INFO - Convert file from excel to parquet ended
+2024-01-05 15:15:37,507 - INFO - Extract data ended
+2024-01-05 15:15:37,513 - INFO - Return bash command: curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/balance_sheet_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/balance_sheet_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_officers_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_officers_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_overview_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_overview_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_profile_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_profile_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_shareholders_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_shareholders_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_financial_ratio_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/capture_financial_ratio_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_fundamental_ratio_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_fundamental_ratio_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_history_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_history_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_intraday_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_intraday_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_rating_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_rating_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_subsidiaries_listing_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_subsidiaries_listing_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_ticker_volatility_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_ticker_volatility_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/cash_flow_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/cash_flow_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/company_listing_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/company_listing_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/income_statement_05-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/income_statement_05-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+
+2024-01-08 02:51:54,763 - INFO - Capture all quarterly data started.
+2024-01-08 02:52:37,881 - ERROR - Error capturing company subsidiaries listing for symbol A32: "['no'] not found in axis"
+2024-01-08 02:52:43,460 - ERROR - Error capturing company subsidiaries listing for symbol ABI: "['no'] not found in axis"
+2024-01-08 02:52:55,729 - ERROR - Error capturing financial ratio for symbol A32: 'quarter'
+2024-01-08 02:53:16,052 - ERROR - Error capturing income statement of type IncomeStatement for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-08 02:53:20,709 - ERROR - Error capturing income statement of type IncomeStatement for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-08 02:53:25,702 - ERROR - Error capturing income statement of type IncomeStatement for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-08 02:53:29,871 - ERROR - Error capturing income statement of type BalanceSheet for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-08 02:53:33,775 - ERROR - Error capturing income statement of type BalanceSheet for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-08 02:53:42,186 - ERROR - Error capturing income statement of type BalanceSheet for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-08 02:53:46,566 - ERROR - Error capturing income statement of type CashFlow for symbol A32: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-08 02:53:49,851 - INFO - Capture all daily data started.
+2024-01-08 02:53:49,859 - INFO - Capture all daily company data started.
+2024-01-08 02:53:50,298 - ERROR - Error capturing income statement of type CashFlow for symbol AAS: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-08 02:53:57,029 - ERROR - Error capturing income statement of type CashFlow for symbol ABC: Excel file format cannot be determined, you must specify an engine manually.
+2024-01-08 02:54:33,976 - INFO - Capture all quarterly data ended.
+2024-01-08 02:55:13,421 - ERROR - Error capturing stock intraday data for symbol A32: "['cp', 'rcp'] not found in axis"
+2024-01-08 02:56:56,223 - INFO - Capture all daily company data ended.
+2024-01-08 02:56:56,243 - INFO - Capture all daily data ended.
+2024-01-08 03:00:47,725 - INFO - Extract data started
+2024-01-08 03:00:47,746 - INFO - Download file from HDFS started
+2024-01-08 03:00:48,429 - INFO - Retrieved file names: ['output_daily_03-01-2024.xlsx', 'output_daily_04-01-2024.xlsx', 'output_daily_05-01-2024.xlsx', 'output_daily_08-01-2024.xlsx', 'output_quarterly_03-01-2024.xlsx', 'output_quarterly_04-01-2024.xlsx', 'output_quarterly_05-01-2024.xlsx', 'output_quarterly_08-01-2024.xlsx']
+2024-01-08 03:00:48,471 - INFO - Retrieved 08-01-2024's file names: ['output_daily_08-01-2024.xlsx', 'output_quarterly_08-01-2024.xlsx']
+2024-01-08 03:02:24,659 - INFO - Download file from HDFS ended
+2024-01-08 03:02:24,677 - INFO - Convert file from excel to parquet started
+2024-01-08 03:06:26,235 - INFO - Convert file from excel to parquet ended
+2024-01-08 03:06:28,443 - INFO - Extract data ended
+2024-01-08 03:06:28,457 - INFO - Return bash command: curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/balance_sheet_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/balance_sheet_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_officers_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_officers_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_overview_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_overview_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_profile_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_profile_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_shareholders_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_shareholders_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_financial_ratio_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/capture_financial_ratio_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_fundamental_ratio_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_fundamental_ratio_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_intraday_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_intraday_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_rating_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_rating_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_subsidiaries_listing_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_subsidiaries_listing_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_ticker_volatility_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_ticker_volatility_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/cash_flow_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/cash_flow_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/company_listing_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/company_listing_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/income_statement_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/income_statement_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+
+2024-01-08 03:25:42,380 - INFO - Extract data started
+2024-01-08 03:25:42,433 - INFO - Download file from HDFS started
+2024-01-08 03:25:51,534 - INFO - Retrieved file names: ['output_daily_03-01-2024.xlsx', 'output_daily_04-01-2024.xlsx', 'output_daily_05-01-2024.xlsx', 'output_daily_08-01-2024.xlsx', 'output_quarterly_03-01-2024.xlsx', 'output_quarterly_04-01-2024.xlsx', 'output_quarterly_05-01-2024.xlsx', 'output_quarterly_08-01-2024.xlsx']
+2024-01-08 03:25:51,561 - INFO - Retrieved 08-01-2024's file names: ['output_daily_08-01-2024.xlsx', 'output_quarterly_08-01-2024.xlsx']
+2024-01-08 03:26:24,812 - INFO - Download file from HDFS ended
+2024-01-08 03:26:24,828 - INFO - Convert file from excel to parquet started
+2024-01-08 03:26:44,285 - INFO - Convert file from excel to parquet ended
+2024-01-08 03:26:44,453 - INFO - Extract data ended
+2024-01-08 03:26:44,457 - INFO - Return bash command: curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/balance_sheet_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/balance_sheet_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_officers_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_officers_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_overview_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_overview_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_profile_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_profile_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_company_shareholders_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_company_shareholders_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_financial_ratio_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/capture_financial_ratio_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_fundamental_ratio_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_fundamental_ratio_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_intraday_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_intraday_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_stock_rating_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_stock_rating_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_subsidiaries_listing_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/capture_subsidiaries_listing_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/capture_ticker_volatility_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/stock_data/capture_ticker_volatility_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/cash_flow_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/cash_flow_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/company_listing_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/general_data/company_listing_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+curl -v -i -X PUT -T /opt/airflow/dags/modules/tmp/income_statement_08-01-2024.parquet "http://host.docker.internal:9864/webhdfs/v1/extract_dir/company_data/financial_data/income_statement_08-01-2024.parquet?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"
+

@@ -8,9 +8,7 @@ import pandas as pd
 from requests.exceptions import ConnectTimeout
 import time
 import re
-import logging
-import os
-
+from modules.setup_logger import create_logger
 
 # Crawled data 
 '''
@@ -293,7 +291,8 @@ def export_data_to_excel(data_dict, listing_df, list_name, file_path, capture_mo
                 if 'Ticker' in df.columns:
                     df = df.drop('Ticker', axis=1)
 
-                df.to_excel(writer, sheet_name=convert_column_name(function_name))
+                df.to_excel(writer, sheet_name=convert_column_name(function_name if "capture_" not in function_name else function_name.replace('capture_', '')))
+
 
 def capture_all_stock_data(capture_date, file_path, limit=None):
     logger.info("Capture all daily company data started.")
@@ -594,25 +593,6 @@ def capture_all_quarterly_data(capture_date, limit=None):
     return company_listing_df, *data_dict.values()
 
 #------------------------------------------------------------------------
-
-# Set up logger
-def create_logger():
-    logger = logging.getLogger('server_logger')
-    logger.setLevel(logging.ERROR)
-    logger.setLevel(logging.INFO)
-
-    for handler in logger.handlers:
-        print(handler)
-        logger.removeHandler(handler)
-
-    if not len(logger.handlers) > 0:
-        file_handler = logging.FileHandler(f'/opt/airflow/data/logs.log')
-
-        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-        file_handler.setFormatter(formatter)
-        logger.addHandler(file_handler)
-
-    return logger
 
 # Capture all data
 CAPTURE_OPTION = {

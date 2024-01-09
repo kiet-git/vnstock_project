@@ -42,6 +42,8 @@ extract = PythonOperator(
     op_args=['/opt/airflow/dags/modules/tmp/'],
     provide_context=True,
     dag=dag,
+    retries=5,
+    retry_delay=timedelta(minutes=1),
 )
 
 store = BashOperator(
@@ -52,7 +54,7 @@ store = BashOperator(
 
 delete_tmp = BashOperator(
     task_id='delete_tmp_task',
-    bash_command='rm -f /opt/airflow/dags/modules/tmp/*',
+    bash_command='rm -rf /opt/airflow/dags/modules/tmp/*',
     dag=dag,
 )
 

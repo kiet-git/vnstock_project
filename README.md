@@ -188,9 +188,27 @@ curl -i "http://localhost:9870/webhdfs/v1/user_data?op=LISTSTATUS"
 
 This command lists the status of all subdirectories in the specified HDFS path.
 
+## Use pyspark in Airflow container
+Add pyspark in requirements.txt and update Dockerfile with the following:
+```Dockerfile
+FROM apache/airflow:2.8.0
+ADD requirements.txt .
+USER root
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+         openjdk-17-jre-headless \
+  && apt-get install -y procps \
+  && apt-get autoremove -yqq --purge \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+USER airflow
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+RUN pip install --no-cache-dir "apache-airflow==${AIRFLOW_VERSION}" apache-airflow-providers-apache-spark==2.1.3 -r requirements.txt
+```
+
 ## ETL
 
-### Data Lake structure
+### Extract: Data Lake structure
 - **Company Data:**
     - **General Data**
         - Company listing
@@ -223,4 +241,22 @@ This command lists the status of all subdirectories in the specified HDFS path.
     - Industry holding list details
     - Nav report
     - Asset holding list 
-   
+
+### Transform
+#### Feature (Max 50 features)
+- Tốc độ thay đổi giá: % thay đổi giá của 1 tuần, 1 tháng
+- Độ lệch chuẩn
+- Biến động giá
+- Các chỉ số liên quan đến dữ liệu về chứng khoán
+- Khối lượng giao dịch trong ngày, tuần tháng
+- Tính trung bình theo ngày tháng tuần
+- Tính độ lệch chuẩn theo ngày tháng tuần
+
+Chia theo group:
+- Theo ngày
+- Theo tuần
+- Theo tháng
+
+Tên, mô tả, tính như nào, câu sql (để giúp người dùng hiểu đúng)
+Features must be non-linear
+Features that correlate with each other 

@@ -7,6 +7,9 @@ import openpyxl
 import re
 import fastparquet as fp
 from modules.setup_logger import create_logger
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import lit, date_format, col
+import time
 
 def run_curl_command(curl_command):
     try:
@@ -60,7 +63,7 @@ def convert_excel_to_excel(file_path):
     wb.save(file_path)
 
 def download_files(output_folder='tmp'):
-    file_names = get_file_names_with_today_date(get_file_names())
+    file_names = ['output_daily_08-01-2024.xlsx', 'output_quarterly_08-01-2024.xlsx']
 
     os.makedirs(output_folder, exist_ok=True)
 
@@ -74,20 +77,48 @@ def download_files(output_folder='tmp'):
         run_curl_command(curl_command)
         convert_excel_to_excel(output_file_path)
 
+   
 def convert_excel_to_parquet(input_folder="tmp"):
+
+    spark = SparkSession.builder.appName("ExcelToParquet").getOrCreate()
+
     for file_name in os.listdir(input_folder):
         if file_name.endswith(".xlsx"):
             excel_file_path = os.path.join(input_folder, file_name)
 
-            date_part = file_name.split("_")[-1].split(".xlsx")[0]
+            date_str = file_name.split("_")[-1].split(".xlsx")[0]
 
             excel_data = pd.read_excel(excel_file_path, sheet_name=None)
 
-            for sheet_name, sheet_data in excel_data.items():
+            for sheet_name, sheet_df in excel_data.items():
                 if 'Summary' not in sheet_name:
                     sheet_name = sheet_name.lower().replace(" ", "_")
-                    parquet_file_path = os.path.join(input_folder, f"{sheet_name}_{date_part}.parquet")
-                    fp.write(parquet_file_path, sheet_data)
+                    if 'capture_' in sheet_name:
+                        sheet_name = sheet_name.replace('capture_', '')
+
+                    date_obj = datetime.strptime(date_str, "%d-%m-%Y").date()
+                    spark_df = spark.createDataFrame(sheet_df)
+                    spark_df = spark_df.withColumn("date", lit(date_obj))
+                    spark_df = spark_df.withColumn("date", date_format(col("date"), "dd-MM-yyyy"))
+                    parquet_file_path = os.path.join(input_folder, f"{sheet_name}")
+                    spark_df.write.partitionBy("date").parquet(parquet_file_path, mode="overwrite")
+
+    spark.stop()
+
+# def convert_excel_to_parquet(input_folder="tmp"):
+#     for file_name in os.listdir(input_folder):
+#         if file_name.endswith(".xlsx"):
+#             excel_file_path = os.path.join(input_folder, file_name)
+
+#             date_part = file_name.split("_")[-1].split(".xlsx")[0]
+
+#             excel_data = pd.read_excel(excel_file_path, sheet_name=None)
+
+#             for sheet_name, sheet_data in excel_data.items():
+#                 if 'Summary' not in sheet_name:
+#                     sheet_name = sheet_name.lower().replace(" ", "_")
+#                     parquet_file_path = os.path.join(input_folder, f"{sheet_name}_{date_part}.parquet")
+#                     fp.write(parquet_file_path, sheet_data)
 
 # def convert_excel_to_csv(input_folder = "tmp" ):
 #     for file_name in os.listdir(input_folder):
@@ -104,36 +135,34 @@ def convert_excel_to_parquet(input_folder="tmp"):
 #                     csv_file_path = os.path.join(input_folder, f"{sheet_name}_{date_part}.csv")
 #                     sheet_data.to_csv(csv_file_path, index=False)
 
-def extract_filename(filename):
-    if 'capture_' in filename:
-        filename = filename.replace('capture_', '')
-    match = re.search(r'^(.+?)_[0-9]', filename)
-    return match.group(1).replace('_', ' ').capitalize().strip() if match else ''
+# def extract_filename(filename):
+#     if 'capture_' in filename:
+#         filename = filename.replace('capture_', '')
+#     match = re.search(r'^(.+?)_[0-9]', filename)
+#     return match.group(1).replace('_', ' ').capitalize().strip() if match else ''
 
-def find_path(filename):
+def find_path(dirname):
     from modules.extract_folder_struct import FOLDER_STRUCTURE
-
-    filename = extract_filename(filename)
     for item in FOLDER_STRUCTURE:
-        path = find_path_helper(item, '', filename)
+        path = find_path_helper(item, '', dirname)
         if path:
             return path
 
-def find_path_helper(substructure, current_path, filename):
+def find_path_helper(substructure, current_path, dirname):
     if isinstance(substructure, dict):
         for key, value in substructure.items():
             new_path = f"{current_path}{key}/"
-            path = find_path_helper(value, new_path, filename)
+            path = find_path_helper(value, new_path, dirname)
             if path:
                 return path
     elif isinstance(substructure, list):
         for item in substructure:
-            path = find_path_helper(item, current_path, filename)
+            path = find_path_helper(item, current_path, dirname)
             if path:
                 return path
     else:
-        if substructure == filename:
-            return current_path.lower().replace(" ", "_")
+        if substructure == dirname:
+            return f'{current_path}{dirname}/'.lower().replace(" ", "_")
         else: 
             return None
 
@@ -149,13 +178,19 @@ def extract_data(source_directory = 'tmp', **kwargs):
     logger.info("Convert file from excel to parquet ended")
 
     bash_command = ''
-    for filename in os.listdir(source_directory):
-        if filename.endswith(".parquet"):
-            full_path = os.path.join(source_directory, filename)
-            dir_path = find_path(filename)
-            full_storage_path = os.path.join(dir_path, filename) if dir_path else ''
-            curl_command = f'curl -v -i -X PUT -T {full_path} "http://host.docker.internal:9864/webhdfs/v1/extract_dir/{full_storage_path}?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"\n'
-            bash_command += curl_command
+    for file in os.listdir(source_directory):
+        file_path = os.path.join(source_directory, file)
+        if os.path.isdir(file_path):
+            dir_path = find_path(file.replace("_", " ").capitalize())
+            for sub_file in os.listdir(file_path):
+                sub_file_path = os.path.join(file_path, sub_file)
+                if os.path.isdir(sub_file_path):
+                    dir_path += f"{sub_file}/"
+                    for file1 in os.listdir(sub_file_path):
+                        full_path = os.path.join(sub_file_path, file1)
+                        full_storage_path = os.path.join(dir_path, file1) if dir_path else ''
+                        curl_command = f'curl -v -i -X PUT -T {full_path} "http://host.docker.internal:9864/webhdfs/v1/extract_dir/{full_storage_path}?op=CREATE&namenoderpcaddress=namenode:9000&createflag=&createparent=true&overwrite=false"\n'
+                        bash_command += curl_command
 
     kwargs['ti'].xcom_push(key='bash_command', value=bash_command)
     logger.info("Extract data ended")

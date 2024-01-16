@@ -58,25 +58,25 @@ Data to be crawled:
 def capture_company_listing():
     try:
         df = listing_companies(live=True)
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
     except Exception as e:
         error_message = f"Error capturing company listing data: {e}"
         logger.error(error_message)
         return pd.DataFrame()
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
+
 
 # Mức biến động giá cổ phiếu (Ticker price volatility)
 def capture_ticker_volatility(*args):
     symbol = args[0]
     try:
         df = ticker_price_volatility(symbol=symbol)
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
     except Exception as e:
         error_message = f"Error capturing ticker price volatility data for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
-
 
 # Thông tin giao dịch nội bộ (Company insider deals)
 def capture_insider_deals(*args, page_size=30):
@@ -89,12 +89,12 @@ def capture_insider_deals(*args, page_size=30):
             symbol=symbol, 
             page_size=page_size, 
             page=0)
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df[df['dealAnnounceDate'] == date_string]
     except Exception as e:
         error_message = f"Error capturing company insider deals data for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df[df['dealAnnounceDate'] == date_string]
 
 # Thông tin sự kiện quyền (Company events)
 def capture_company_event(*args, page_size=10):
@@ -105,16 +105,14 @@ def capture_company_event(*args, page_size=10):
             symbol=symbol, 
             page_size=page_size, 
             page=0)
-
+        df = df.apply(pd.to_numeric, errors='ignore')
+        df["exerDateFormatted"] = pd.to_datetime(df['exerDate'], format="%Y-%m-%d %H:%M:%S")
+        return df[df['exerDateFormatted'] == capture_date]
     except Exception as e:
         error_message = f"Error capturing company events data for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
     
-    df = df.apply(pd.to_numeric, errors='ignore')
-    df["exerDateFormatted"] = pd.to_datetime(df['exerDate'], format="%Y-%m-%d %H:%M:%S")
-    return df[df['exerDateFormatted'] == capture_date]
-
 # Tin tức công ty (Company news)
 def capture_company_news(*args, page_size=10):
     symbol = args[0]
@@ -125,17 +123,14 @@ def capture_company_news(*args, page_size=10):
             symbol=symbol, 
             page_size=page_size, 
             page=0)
-
+        df = df.apply(pd.to_numeric, errors='ignore')
+        df["publishDateFormatted"] = pd.to_datetime(df['publishDate'], format="%Y-%m-%d %H:%M:%S")
+        return df[df['publishDateFormatted'] == capture_date]
     except Exception as e:
         error_message = f"Error capturing company news for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
     
-    df = df.apply(pd.to_numeric, errors='ignore')
-    df["publishDateFormatted"] = pd.to_datetime(df['publishDate'], format="%Y-%m-%d %H:%M:%S")
-    return df[df['publishDateFormatted'] == capture_date]
-
-
 # Giá cổ phiếu (Stock history) 
 def capture_stock_history(*args):
     symbol = args[0]
@@ -153,14 +148,13 @@ def capture_stock_history(*args):
             decor=False,
             source='DNSE'
         )
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
     except Exception as e:
         error_message = f"Error capturing historical data for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
     
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
-
 # Dữ liệu khớp lệnh trong ngày giao dịch (Stock intraday)
 def capture_stock_intraday(*args, page_size=1000):
     symbol = args[0]
@@ -188,13 +182,13 @@ def capture_stock_evaluation(*args):
             symbol=symbol,
             period=1, 
             time_window='D')
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df[df['fromDate'] == date_string]
     except Exception as e:
         error_message = f"Error capturing evaluation data for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df[df['fromDate'] == date_string]
-
+  
 
 # Đánh giá cổ phiếu (Stock rating)
 def capture_stock_rating(*args):
@@ -213,13 +207,13 @@ def capture_stock_rating(*args):
         df_merged = pd.concat([df.set_index('ticker') for df in dfs], axis=1, join='outer').reset_index()
 
         df_merged = df_merged.loc[:,~df_merged.columns.duplicated()]
-
+        df_merged = df_merged.apply(pd.to_numeric, errors='ignore')
+        return df_merged
     except Exception as e:
         error_message = f"Error capturing stock rating data for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
-    df_merged = df_merged.apply(pd.to_numeric, errors='ignore')
-    return df_merged
+    
 
 # Crawl all daily companies data and store
 def retry_request(func, *args, max_retries=3, retry_delay=20):
@@ -414,42 +408,40 @@ def capture_company_overview(*args):
 
     try:
         df = company_overview(symbol)
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
     except Exception as e:
         error_message = f"Error capturing company overview for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
-
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
 
 # Hồ sơ công ty (Company profile)
 def capture_company_profile(*args):
     symbol = args[0]
 
     try:
-        df = company_profile(symbol)
+        df = company_profile(symbol)    
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
     except Exception as e:
         error_message = f"Error capturing company profile for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
     
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
-
 # Danh sách cổ đông (Company large shareholders)
 def capture_company_shareholders(*args):
     symbol = args[0]
 
     try:
         df = company_large_shareholders(symbol)
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
     except Exception as e:
         error_message = f"Error capturing company large shareholders for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
 
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
-
+  
 # Các chỉ số tài chính cơ bản (Company fundamental ratio)
 def capture_fundamental_ratio(*args, mode='', missing_pct=0.8):
     symbol = args[0]
@@ -477,15 +469,15 @@ def capture_subsidiaries_listing(*args, page_size=100):
             symbol=symbol, 
             page_size=page_size
         )
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
 
     except Exception as e:
         error_message = f"Error capturing company subsidiaries listing for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
 
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
-
+   
 # Ban lãnh đạo công ty (Company officers)
 def capture_company_officers(*args, page_size=20):
     symbol = args[0]
@@ -515,14 +507,15 @@ def capture_financial_ratio(*args, page_size=20):
             report_range='quarterly', 
             is_all=False
         )
+        df = df.apply(pd.to_numeric, errors='ignore')    
+        return df.iloc[:, 0].T.to_frame().T
 
     except Exception as e:
         error_message = f"Error capturing financial ratio for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
 
-    df = df.apply(pd.to_numeric, errors='ignore')    
-    return df.iloc[:, 0].T.to_frame().T
+    
 
 # Báo cáo tài chính (Financial report)
 '''
@@ -544,18 +537,19 @@ def capture_income_statement(*args):
             report_type=report_type, 
             frequency='Quarterly'
         )
+        df = df.iloc[:, [0, -1]].T
+        df.columns = df.iloc[0]
+        df = df.iloc[1:]
+
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
 
     except Exception as e:
         error_message = f"Error capturing income statement of type {report_type} for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
 
-    df = df.iloc[:, [0, -1]].T
-    df.columns = df.iloc[0]
-    df = df.iloc[1:]
-
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
+  
 
 # Crawl all quarterly data and store
 def capture_all_quarterly_data(capture_date, limit=None):

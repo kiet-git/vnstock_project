@@ -244,6 +244,8 @@ RUN pip install --no-cache-dir "apache-airflow==${AIRFLOW_VERSION}" apache-airfl
 
 ### Transform
 #### Feature (Max 50 features)
+The features to be transformed are listed [here](https://docs.google.com/spreadsheets/d/1twc6pGXaac4-B7Ld753_S1Q1bIfmIncci2vds5TU-UM/edit?usp=sharing).
+
 - Tốc độ thay đổi giá: % thay đổi giá của 1 tuần, 1 tháng
 - Độ lệch chuẩn
 - Biến động giá
@@ -260,3 +262,12 @@ Chia theo group:
 Tên, mô tả, tính như nào, câu sql (để giúp người dùng hiểu đúng)
 Features must be non-linear
 Features that correlate with each other 
+
+## Data Science
+Prediction: How much the stock price will increase or decrease within the next 3 days?
+
+
+
+
+
+

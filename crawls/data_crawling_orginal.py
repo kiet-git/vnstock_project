@@ -394,7 +394,7 @@ def capture_all_fund_data(capture_date, file_path, limit=None):
 def capture_all_daily(capture_date, limit=None):
     logger.info("Capture all daily data started.")
     date_string = capture_date.strftime("%d-%m-%Y")
-    file_path = f'/opt/airflow/data/outputs/output_daily_{date_string}.xlsx'
+    file_path = f'../data/outputs/output_daily_{date_string}.xlsx'
 
     if os.path.exists(file_path):
         os.remove(file_path)
@@ -563,7 +563,7 @@ def capture_all_quarterly_data(capture_date, limit=None):
     logger.info("Capture all quarterly data started.")
 
     date_string = capture_date.strftime("%d-%m-%Y")
-    file_path = f'/opt/airflow/data/outputs/output_quarterly_{date_string}.xlsx'
+    file_path = f'../data/outputs/output_quarterly_{date_string}.xlsx'
 
     if os.path.exists(file_path):
         os.remove(file_path)
@@ -606,7 +606,7 @@ def create_logger():
         logger.removeHandler(handler)
 
     if not len(logger.handlers) > 0:
-        file_handler = logging.FileHandler(f'/opt/airflow/data/logs.log')
+        file_handler = logging.FileHandler(f'../data/logs.log')
 
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         file_handler.setFormatter(formatter)
@@ -643,3 +643,12 @@ def capture_all_data(capture_date, limit=None, option=2):
     elif option == 2:
         capture_all_daily(capture_date, limit)
         capture_all_quarterly_data(capture_date, limit)
+
+start_date = datetime(2023, 12, 25)
+end_date = datetime(2023, 12, 29)
+
+# Iterate over the date range
+for i in range((end_date - start_date).days + 1):
+    capture_date = start_date + timedelta(days=i)
+    capture_all_daily(capture_date, 100)
+    capture_all_quarterly_data(capture_date, 100)

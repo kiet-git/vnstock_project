@@ -116,7 +116,7 @@ prison==0.2.1
 prompt-toolkit==3.0.43
 protobuf==4.25.1
 psutil==5.9.7
-ptyprocess==0.7.0
+ptyprocess==0.6.0
 pure-eval==0.2.2
 pycparser==2.21
 pydantic==2.5.3

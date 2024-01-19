@@ -22,6 +22,7 @@ services:
     restart: always
     ports:
       - 9864:9864
+      - 9866:9866
     volumes:
       - hadoop_datanode:/hadoop/dfs/data
     environment:

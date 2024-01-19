@@ -4,7 +4,7 @@ FOLDER_STRUCTURE = [
             {'General Data': [
                 'Company listing',
                 'Company insider deals',
-                'Company events',
+                'Company event',
                 'Company news',
                 'Company overview',
                 'Company profile',

@@ -164,12 +164,13 @@ def capture_stock_intraday(*args, page_size=1000):
             symbol=symbol,                 
             page_size=page_size, 
             investor_segment=True)
+        
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
     except Exception as e:
         error_message = f"Error capturing stock intraday data for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
 
 # Định giá cổ phiếu (Stock evaluation)
 def capture_stock_evaluation(*args):
@@ -356,16 +357,18 @@ def capture_fund_details(*args):
             symbol=symbol, 
             type=type
         )
+
+        df = df.apply(pd.to_numeric, errors='ignore')
+
+        if 'Ngày' in df.columns:
+            return df[df['Ngày'] == date_string]
+
+        return df
     except Exception as e:
         error_message = f"Error capturing fund details data of {type} for {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
 
-    if 'Ngày' in df.columns:
-        return df[df['Ngày'] == date_string]
-
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
 
 # Crawl all funds daily data and store
 def capture_all_fund_data(capture_date, file_path, limit=None):
@@ -452,13 +455,14 @@ def capture_fundamental_ratio(*args, mode='', missing_pct=0.8):
             mode='', 
             missing_pct=missing_pct
         )
+
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
     except Exception as e:
         error_message = f"Error capturing company fundamental ratio for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
 
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
 
 # Danh sách công ty con, công ty liên kết (Company subsidiaries listing)
 def capture_subsidiaries_listing(*args, page_size=100):
@@ -488,14 +492,14 @@ def capture_company_officers(*args, page_size=20):
             page_size=page_size, 
             page=0
         )
-
+        df = df.apply(pd.to_numeric, errors='ignore')
+        return df
     except Exception as e:
         error_message = f"Error capturing company officers (BOD) for symbol {symbol}: {e}"
         logger.error(error_message)
         return pd.DataFrame()
 
-    df = df.apply(pd.to_numeric, errors='ignore')
-    return df
+   
 
 # Chỉ số tài chính cơ bản (Financial ratio)
 def capture_financial_ratio(*args, page_size=20):

@@ -3,13 +3,9 @@ import json
 import os
 from datetime import datetime
 import pandas as pd
-import openpyxl
-import re
-import fastparquet as fp
 from modules.setup_logger import create_logger
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import lit, date_format, col
-import time
 
 def run_curl_command(curl_command):
     try:
@@ -57,13 +53,9 @@ def get_file_names():
             
             logger.info(f"Retrieved file names: {file_names}")
             return file_names
-
-def convert_excel_to_excel(file_path):
-    wb = openpyxl.load_workbook(file_path)
-    wb.save(file_path)
-
+        
 def download_files(output_folder='tmp'):
-    file_names = ['output_daily_08-01-2024.xlsx', 'output_quarterly_08-01-2024.xlsx']
+    file_names = get_file_names_with_today_date(get_file_names())
 
     os.makedirs(output_folder, exist_ok=True)
 
@@ -73,10 +65,8 @@ def download_files(output_folder='tmp'):
         file_url = f"{base_url}{file_name}?op=OPEN&namenoderpcaddress=namenode:9000&offset=0"
         output_file_path = os.path.join(output_folder, f'{file_name}')
 
-        curl_command = f'curl -i "{file_url}" -o "{output_file_path}"'
+        curl_command = f'curl "{file_url}" -o "{output_file_path}"'
         run_curl_command(curl_command)
-        convert_excel_to_excel(output_file_path)
-
    
 def convert_excel_to_parquet(input_folder="tmp"):
 
@@ -101,7 +91,11 @@ def convert_excel_to_parquet(input_folder="tmp"):
                     spark_df = spark_df.withColumn("date", lit(date_obj))
                     spark_df = spark_df.withColumn("date", date_format(col("date"), "dd-MM-yyyy"))
                     parquet_file_path = os.path.join(input_folder, f"{sheet_name}")
-                    spark_df.write.partitionBy("date").parquet(parquet_file_path, mode="overwrite")
+                    if os.path.exists(parquet_file_path):
+                        mode = "append"
+                    else:
+                        mode = "overwrite"
+                    spark_df.write.partitionBy("date").parquet(parquet_file_path, mode=mode)
 
     spark.stop()
 
@@ -161,7 +155,7 @@ def find_path_helper(substructure, current_path, dirname):
             if path:
                 return path
     else:
-        if substructure == dirname:
+        if substructure.lower() == dirname.lower():
             return f'{current_path}{dirname}/'.lower().replace(" ", "_")
         else: 
             return None
@@ -181,10 +175,10 @@ def extract_data(source_directory = 'tmp', **kwargs):
     for file in os.listdir(source_directory):
         file_path = os.path.join(source_directory, file)
         if os.path.isdir(file_path):
-            dir_path = find_path(file.replace("_", " ").capitalize())
             for sub_file in os.listdir(file_path):
                 sub_file_path = os.path.join(file_path, sub_file)
                 if os.path.isdir(sub_file_path):
+                    dir_path = find_path(file.replace("_", " ").capitalize())
                     dir_path += f"{sub_file}/"
                     for file1 in os.listdir(sub_file_path):
                         full_path = os.path.join(sub_file_path, file1)

@@ -2,6 +2,7 @@ FROM apache/airflow:2.8.0
 ADD requirements.txt .
 USER root
 RUN apt-get update \
+  && apt-get install -y gcc python3-dev \
   && apt-get install -y --no-install-recommends \
          openjdk-17-jre-headless \
   && apt-get install -y procps \

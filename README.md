@@ -265,7 +265,8 @@ Features must be non-linear
 Features that correlate with each other 
 
 ## Data Science
-Prediction: How much the stock price will increase or decrease within the next 3 days?
+Prediction #1: Will the stock price increase/decrease in the next 3 days?
+Prediction #2: How much the stock price will increase or decrease within the next 3 days?
 
 
 

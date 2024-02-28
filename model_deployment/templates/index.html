@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stock Prediction</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+            .container {
+                display: flex;
+                justify-content: space-evenly;
+                margin: 20px auto;
+                padding: 20px;
+            }
+            .form-container, .prediction-container {
+                width: 45%;
+                max-width: 600px;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: #fff;
+            }
+            .form_inner {
+                display: flex;
+                justify-content: space-between;
+            }
+            .prediction-container {
+                background-color: #f4f4f4;
+            }
+            .form-column {
+                width: 48%; /* Adjust as needed */
+            }
+            .form-column:first-child {
+                margin-right: 4%; /* Adjust as needed */
+            }
+            .form-column label,
+            .form-column input[type="text"] {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .form-column input[type="text"] {
+                width: calc(100% - 22px); /* Adjust as needed */
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+            h1 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 20px;
+            }
+            label {
+                display: block;
+                margin-bottom: 8px;
+                color: #555;
+                font-weight: bold;
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+            input[type="submit"] {
+                width: 100%;
+                padding: 12px;
+                background-color: #4CAF50;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+            }
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+            #predictionResult {
+                font-size: 50px;
+                margin: 60px auto;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-container">
+                <h1>Stock Prediction</h1>
+                <form id="predictionForm">
+                    <div class="form_inner">
+                        <div class="form-column">
+                            <label for="ft_min_6_days">ft_min_6_days:</label><br>
+                            <input value="0" type="text" id="ft_min_6_days" name="ft_min_6_days"><br>
+
+                            <label for="williams_r_3_days">williams_r_3_days:</label><br>
+                            <input value="0" type="text" id="williams_r_3_days" name="williams_r_3_days"><br>
+
+                            <label for="bool_williams_r_3_days">bool_williams_r_3_days:</label><br>
+                            <input value="0" type="text" id="bool_williams_r_3_days" name="bool_williams_r_3_days"><br>
+
+                            <label for="volume">volume:</label><br>
+                            <input value="0" type="text" id="volume" name="volume"><br>
+
+                            <label for="ema_5_days">ema_5_days:</label><br>
+                            <input value="0" type="text" id="ema_5_days" name="ema_5_days"><br>
+
+                            <label for="macd_of_ema3_and_ema5">macd_of_ema3_and_ema5:</label><br>
+                            <input value="0" type="text" id="macd_of_ema3_and_ema5" name="macd_of_ema3_and_ema5"><br>
+
+                            <label for="bool_d_5_days">bool_d_5_days:</label><br>
+                            <input value="0" type="text" id="bool_d_5_days" name="bool_d_5_days"><br>
+
+                            <label for="obv">obv:</label><br>
+                            <input value="0" type="text" id="obv" name="obv"><br>
+
+                            <label for="k_5_days">k_5_days:</label><br>
+                            <input value="0" type="text" id="k_5_days" name="k_5_days"><br>
+
+                            <label for="cci_3_days">cci_3_days:</label><br>
+                            <input value="0" type="text" id="cci_3_days" name="cci_3_days"><br>
+                        </div>
+                        <div class="form-column">
+                            <label for="std_volume_change_3_day_s_periods">std_volume_change_3_day_s_periods:</label><br>
+                            <input value="0" type="text" id="std_volume_change_3_day_s_periods" name="std_volume_change_3_day_s_periods"><br>
+
+                            <label for="price_change_to_3_day_s_ago">price_change_to_3_day_s_ago:</label><br>
+                            <input value="0" type="text" id="price_change_to_3_day_s_ago" name="price_change_to_3_day_s_ago"><br>
+
+                            <label for="bool_ema_5_days">bool_ema_5_days:</label><br>
+                            <input value="0" type="text" id="bool_ema_5_days" name="bool_ema_5_days"><br>
+
+                            <label for="rsi_5_days">rsi_5_days:</label><br>
+                            <input value="0" type="text" id="rsi_5_days" name="rsi_5_days"><br>
+
+                            <label for="bool_ema_3_days">bool_ema_3_days:</label><br>
+                            <input value="0" type="text" id="bool_ema_3_days" name="bool_ema_3_days"><br>
+
+                            <label for="volume_change_to_3_day_s_ago">volume_change_to_3_day_s_ago:</label><br>
+                            <input value="0" type="text" id="volume_change_to_3_day_s_ago" name="volume_change_to_3_day_s_ago"><br>
+
+                            <label for="ema_3_days">ema_3_days:</label><br>
+                            <input value="0" type="text" id="ema_3_days" name="ema_3_days"><br>
+
+                            <label for="sma_5_days">sma_5_days:</label><br>
+                            <input value="0" type="text" id="sma_5_days" name="sma_5_days"><br>
+
+                            <label for="bool_sma_5_days">bool_sma_5_days:</label><br>
+                            <input value="0" type="text" id="bool_sma_5_days" name="bool_sma_5_days"><br>
+
+                            <label for="d_3_days">d_3_days:</label><br>
+                            <input value="0" type="text" id="d_3_days" name="d_3_days"><br>
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="prediction-container" id="predictionContainer">
+                <h1>Prediction Result</h1>
+                <div id="predictionResult"></div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('predictionForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+                
+                let formData = {};
+                let inputFields = document.querySelectorAll('input[type="text"]');
+                inputFields.forEach(function(input) {
+                    formData[input.id] = parseFloat(input.value);
+                });
+                
+                fetch('http://127.0.0.1:8000/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Prediction:', data);
+                    let predictionResult = document.getElementById('predictionResult');
+                    predictionResult.innerText = data.prediction;
+
+                    let predictionContainer = document.getElementById('predictionContainer');
+                    if (data.prediction.includes('decrease')) {
+                        predictionContainer.style.backgroundColor = 'red';
+                    } else {
+                        predictionContainer.style.backgroundColor = 'green';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('predictionResult').innerText = error.message;
+                });
+            });
+        </script>
+    </body>
+</html>
